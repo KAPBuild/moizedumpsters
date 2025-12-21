@@ -3,8 +3,8 @@ import { cors } from "hono/cors";
 
 const app = new Hono<{ Bindings: Env }>();
 
-// Enable CORS for all routes
-app.use("*", cors());
+// Enable CORS for API routes
+app.use("/api/*", cors());
 
 // Health check endpoint
 app.get("/api/", (c) => c.json({ status: "ok", message: "Moize Dumpsters API" }));
