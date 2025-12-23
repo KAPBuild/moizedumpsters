@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './QuoteForm.css';
 
 export const QuoteForm = () => {
   const [formData, setFormData] = useState({
@@ -58,18 +59,15 @@ export const QuoteForm = () => {
 
   if (submitted) {
     return (
-      <div className="bg-accent/10 border-2 border-accent rounded-lg p-8 text-center max-w-2xl mx-auto">
-        <h2 className="text-3xl font-bold text-neutral-900 mb-4">Quote Request Submitted!</h2>
-        <p className="text-lg text-neutral-600 mb-6">
+      <div className="quote-success">
+        <h2>Quote Request Submitted!</h2>
+        <p>
           Thank you for your submission. We'll review your request and contact you within 24 hours with a free quote.
         </p>
-        <p className="text-neutral-600 mb-6">
+        <p>
           Expected contact method: <strong>{formData.phone}</strong>
         </p>
-        <button
-          onClick={() => setSubmitted(false)}
-          className="bg-primary text-white font-bold py-3 px-8 rounded-lg hover:opacity-90 transition-opacity"
-        >
+        <button onClick={() => setSubmitted(false)}>
           Submit Another Quote
         </button>
       </div>
@@ -77,143 +75,144 @@ export const QuoteForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
-      {/* Name */}
-      <div>
-        <label htmlFor="name" className="block text-sm font-bold text-neutral-900 mb-2">
-          Full Name <span className="text-accent">*</span>
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-          placeholder="John Smith"
-        />
-      </div>
+    <div className="quote-form-container">
+      <form onSubmit={handleSubmit} className="quote-form">
+        {/* Name */}
+        <div className="form-group">
+          <label htmlFor="name" className="form-label">
+            Full Name <span className="required">*</span>
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="form-input"
+            placeholder="John Smith"
+          />
+        </div>
 
-      {/* Phone */}
-      <div>
-        <label htmlFor="phone" className="block text-sm font-bold text-neutral-900 mb-2">
-          Phone Number <span className="text-accent">*</span>
-        </label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-          placeholder="(518) 555-0123"
-        />
-      </div>
+        {/* Phone */}
+        <div className="form-group">
+          <label htmlFor="phone" className="form-label">
+            Phone Number <span className="required">*</span>
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+            className="form-input"
+            placeholder="(518) 555-0123"
+          />
+        </div>
 
-      {/* Email */}
-      <div>
-        <label htmlFor="email" className="block text-sm font-bold text-neutral-900 mb-2">
-          Email Address <span className="text-accent">*</span>
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-          placeholder="john@example.com"
-        />
-      </div>
+        {/* Email */}
+        <div className="form-group">
+          <label htmlFor="email" className="form-label">
+            Email Address <span className="required">*</span>
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="form-input"
+            placeholder="john@example.com"
+          />
+        </div>
 
-      {/* Address */}
-      <div>
-        <label htmlFor="address" className="block text-sm font-bold text-neutral-900 mb-2">
-          Project Address <span className="text-accent">*</span>
-        </label>
-        <input
-          type="text"
-          id="address"
-          name="address"
-          value={formData.address}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-          placeholder="123 Main St, Albany, NY 12207"
-        />
-      </div>
+        {/* Address */}
+        <div className="form-group">
+          <label htmlFor="address" className="form-label">
+            Project Address <span className="required">*</span>
+          </label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            value={formData.address}
+            onChange={handleChange}
+            required
+            className="form-input"
+            placeholder="123 Main St, Albany, NY 12207"
+          />
+        </div>
 
-      {/* Service Type */}
-      <div>
-        <label htmlFor="serviceType" className="block text-sm font-bold text-neutral-900 mb-2">
-          Service Type <span className="text-accent">*</span>
-        </label>
-        <select
-          id="serviceType"
-          name="serviceType"
-          value={formData.serviceType}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+        {/* Service Type */}
+        <div className="form-group">
+          <label htmlFor="serviceType" className="form-label">
+            Service Type <span className="required">*</span>
+          </label>
+          <select
+            id="serviceType"
+            name="serviceType"
+            value={formData.serviceType}
+            onChange={handleChange}
+            className="form-select"
+          >
+            <option value="dumpster-rental">Dumpster Rental</option>
+            <option value="residential-demolition">Residential Demolition</option>
+            <option value="commercial-demolition">Commercial Demolition</option>
+            <option value="debris-removal">Debris Removal</option>
+          </select>
+        </div>
+
+        {/* Dumpster Size */}
+        <div className="form-group">
+          <label htmlFor="dumpsterSize" className="form-label">
+            Dumpster Size <span className="required">*</span>
+          </label>
+          <select
+            id="dumpsterSize"
+            name="dumpsterSize"
+            value={formData.dumpsterSize}
+            onChange={handleChange}
+            className="form-select"
+          >
+            <option value="10">10 Yard</option>
+            <option value="15">15 Yard</option>
+            <option value="20">20 Yard</option>
+            <option value="25">25 Yard</option>
+            <option value="30">30 Yard</option>
+            <option value="40">40 Yard</option>
+          </select>
+        </div>
+
+        {/* Project Details */}
+        <div className="form-group">
+          <label htmlFor="projectDetails" className="form-label">
+            Project Details
+          </label>
+          <textarea
+            id="projectDetails"
+            name="projectDetails"
+            value={formData.projectDetails}
+            onChange={handleChange}
+            className="form-textarea"
+            placeholder="Tell us more about your project..."
+          />
+        </div>
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          disabled={loading}
+          className="form-submit"
         >
-          <option value="dumpster-rental">Dumpster Rental</option>
-          <option value="residential-demolition">Residential Demolition</option>
-          <option value="commercial-demolition">Commercial Demolition</option>
-          <option value="debris-removal">Debris Removal</option>
-        </select>
-      </div>
+          {loading ? 'Submitting...' : 'Get My Free Quote'}
+        </button>
 
-      {/* Dumpster Size */}
-      <div>
-        <label htmlFor="dumpsterSize" className="block text-sm font-bold text-neutral-900 mb-2">
-          Dumpster Size <span className="text-accent">*</span>
-        </label>
-        <select
-          id="dumpsterSize"
-          name="dumpsterSize"
-          value={formData.dumpsterSize}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-        >
-          <option value="10">10 Yard</option>
-          <option value="15">15 Yard</option>
-          <option value="20">20 Yard</option>
-          <option value="25">25 Yard</option>
-          <option value="30">30 Yard</option>
-          <option value="40">40 Yard</option>
-        </select>
-      </div>
-
-      {/* Project Details */}
-      <div>
-        <label htmlFor="projectDetails" className="block text-sm font-bold text-neutral-900 mb-2">
-          Project Details
-        </label>
-        <textarea
-          id="projectDetails"
-          name="projectDetails"
-          value={formData.projectDetails}
-          onChange={handleChange}
-          rows={4}
-          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-          placeholder="Tell us more about your project..."
-        />
-      </div>
-
-      {/* Submit Button */}
-      <button
-        type="submit"
-        disabled={loading}
-        className="w-full bg-accent text-white font-bold py-4 px-8 rounded-lg text-lg hover:opacity-90 transition-opacity disabled:opacity-50"
-      >
-        {loading ? 'Submitting...' : 'Get My Free Quote'}
-      </button>
-
-      <p className="text-sm text-neutral-600 text-center">
-        We'll contact you within 24 hours with your free quote.
-      </p>
-    </form>
+        <p className="form-helper-text">
+          We'll contact you within 24 hours with your free quote.
+        </p>
+      </form>
+    </div>
   );
 };

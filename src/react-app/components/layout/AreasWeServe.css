@@ -118,7 +118,11 @@
 
   .areas-locations {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 0;
+  }
+
+  .location-column {
+    margin-bottom: 0;
   }
 
   .location-item {

@@ -125,6 +125,10 @@ export const Footer = () => {
                 <span className="chevron">&gt;</span>
                 <span>About Us</span>
               </a>
+              <a href="/faq" className="footer-link footer-link-item">
+                <span className="chevron">&gt;</span>
+                <span>FAQ</span>
+              </a>
               <a href="/contact" className="footer-link footer-link-item">
                 <span className="chevron">&gt;</span>
                 <span>Contact Us</span>

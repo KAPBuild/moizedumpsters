@@ -1,19 +1,32 @@
 .header {
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px 60px;
+  padding: 20px 100px;
   position: sticky;
   top: 0;
   z-index: 40;
 }
 
 .header-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 40px;
+}
+
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-shrink: 0;
 }
 
 /* LOGO SECTION */
@@ -22,17 +35,18 @@
   align-items: center;
   gap: 12px;
   text-decoration: none;
-  color: black;
+  color: inherit;
   cursor: pointer;
   flex-shrink: 0;
+  transition: opacity 0.3s ease;
+}
+
+.header-logo:hover {
+  opacity: 0.8;
 }
 
 .logo-icon {
-  width: 55px;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: none;
 }
 
 .logo-text {
@@ -43,7 +57,7 @@
 
 .logo-main {
   font-family: 'Poppins', 'Montserrat', sans-serif;
-  font-size: 18px;
+  font-size: 28px;
   font-weight: 800;
   color: #1f2937;
   letter-spacing: 0.5px;
@@ -52,24 +66,28 @@
 
 .logo-sub {
   font-family: 'Poppins', sans-serif;
-  font-size: 12px;
-  color: #9ca3af;
-  font-weight: 500;
+  font-size: 15px;
+  color: #4b5563;
+  font-weight: 600;
   line-height: 1.2;
 }
 
 /* CENTER NAVIGATION */
 .header-nav {
-  display: flex;
+  display: flex !important;
   gap: 40px;
-  justify-content: center;
-  flex: 1;
+  justify-content: flex-start;
+  position: static;
+  background-color: transparent;
+  padding: 0;
+  box-shadow: none;
+  flex-direction: row !important;
 }
 
 .nav-item {
   font-family: 'Poppins', 'Montserrat', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 17px;
+  font-weight: 800;
   color: #1f2937;
   text-decoration: none;
   text-transform: uppercase;
@@ -90,18 +108,55 @@
   margin-top: -2px;
 }
 
+/* HAMBURGER MENU */
+.hamburger-menu {
+  display: none !important;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  gap: 7px;
+  z-index: 51;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger-menu span {
+  width: 32px;
+  height: 4px;
+  background-color: #1f2937;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  display: block;
+}
+
+.hamburger-menu span.open:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger-menu span.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu span.open:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
 /* RIGHT SIDE - CTA */
 .header-cta {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   flex-shrink: 0;
 }
 
 .cta-label {
   font-family: 'Poppins', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   color: #9ca3af;
   font-weight: 500;
   white-space: nowrap;
@@ -111,10 +166,10 @@
   background-color: #ff6b00;
   color: white;
   font-family: 'Poppins', 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   text-decoration: none;
-  padding: 12px 24px;
+  padding: 14px 28px;
   border-radius: 25px;
   display: flex;
   align-items: center;
@@ -145,19 +200,25 @@
 
   .header-nav {
     gap: 24px;
+    display: flex !important;
+  }
+
+  .hamburger-menu {
+    display: none !important;
   }
 
   .nav-item {
-    font-size: 12px;
+    font-size: 15px;
+    font-weight: 800;
   }
 
   .phone-button {
-    padding: 10px 20px;
-    font-size: 12px;
+    padding: 12px 24px;
+    font-size: 14px;
   }
 
   .cta-label {
-    font-size: 11px;
+    font-size: 12px;
   }
 }
 
@@ -168,40 +229,87 @@
   }
 
   .header-container {
-    grid-template-columns: auto 1fr;
+    flex-wrap: wrap;
     gap: 16px;
   }
 
+  .header-center {
+    flex: 1;
+    gap: 8px;
+    justify-content: flex-start;
+  }
+
+  .header-right {
+    gap: 6px;
+    order: -1;
+  }
+
+  .logo-main {
+    font-size: 16px;
+  }
+
+  .logo-sub {
+    font-size: 10px;
+  }
+
   .header-nav {
-    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: white;
+    flex-direction: column !important;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    gap: 8px;
+    display: none !important;
+    z-index: 60;
+  }
+
+  .header-nav.open {
+    display: flex !important;
+  }
+
+  .hamburger-menu {
+    display: flex !important;
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+    gap: 5px;
+  }
+
+  .hamburger-menu span {
+    width: 24px;
+    height: 3px;
+  }
+
+  .nav-item {
+    padding: 12px 16px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #1f2937;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+
+  .nav-item:hover {
+    background-color: #f3f4f6;
   }
 
   .header-cta {
     flex-direction: row;
-    gap: 12px;
+    gap: 6px;
+    align-items: center;
   }
 
   .cta-label {
     display: none;
   }
 
-  .logo-main {
-    font-size: 11px;
-  }
-
-  .logo-sub {
-    font-size: 8px;
-  }
-
-  .logo-icon {
-    width: 40px;
-    height: 40px;
-  }
-
   .phone-button {
-    padding: 10px 16px;
-    font-size: 11px;
-    gap: 6px;
+    padding: 8px 12px;
+    font-size: 10px;
+    gap: 4px;
   }
 
   .phone-button svg {

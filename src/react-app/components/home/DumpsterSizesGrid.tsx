@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './DumpsterSizesGrid.css';
 
 export const DumpsterSizesGrid = () => {
@@ -6,31 +7,31 @@ export const DumpsterSizesGrid = () => {
       size: '10 Yard',
       dimensions: "3.5'H x 8'W x 12'L",
       description: 'Our 10-yard dumpsters are perfect for small projects and can fit in tight spaces.',
-      image: '/images/residential-dumpsters.jpg',
+      image: '/images/ROll-OFF.png',
     },
     {
       size: '15 Yard',
       dimensions: "6'H x 8'W x 16'L",
       description: 'Our 15-yard dumpsters are perfect for small to medium-sized renovation projects and...',
-      image: '/images/site-clean-up-dumpster.jpg',
+      image: '/images/ROll-OFF.png',
     },
     {
       size: '20 Yard',
       dimensions: "6'H x 8'W x 22'L",
       description: 'Our 20-yard dumpsters are perfect for medium-sized projects, offering ample space at...',
-      image: '/images/construction-dumpsters-pickup.jpg',
+      image: '/images/ROll-OFF.png',
     },
     {
       size: '30 Yard',
       dimensions: "6'H x 8'W x 22'L",
       description: 'Our 30-yard dumpsters are perfect for larger projects like renovations, home...',
-      image: '/images/residential-dumpsters.jpg',
+      image: '/images/ROll-OFF.png',
     },
     {
       size: '40 Yard',
       dimensions: "8'H x 8'W x 22'L",
       description: 'Our 40 yard dumpsters are large and perfect for big construction projects or...',
-      image: '/images/commercial-waste-disposal.jpg',
+      image: '/images/ROll-OFF.png',
     },
   ];
 
@@ -65,7 +66,7 @@ export const DumpsterSizesGrid = () => {
               <div className="card-info">
                 <h3 className="card-title">{dumpster.size} DUMPSTERS</h3>
                 <p className="card-description">{dumpster.description}</p>
-                <button className="card-button">Learn More</button>
+                <Link to="/request" className="card-button">Book Now</Link>
               </div>
             </div>
           ))}

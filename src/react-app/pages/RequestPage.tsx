@@ -1,6 +1,11 @@
+import { useEffect } from 'react';
 import { QuoteForm } from '../components/request/QuoteForm';
 
 export const RequestPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       {/* Header Section */}
@@ -14,7 +19,7 @@ export const RequestPage = () => {
       </section>
 
       {/* Form Section */}
-      <section className="py-16 bg-neutral-100">
+      <section className="py-12 bg-neutral-100">
         <div className="container mx-auto px-4 lg:px-8">
           <QuoteForm />
         </div>

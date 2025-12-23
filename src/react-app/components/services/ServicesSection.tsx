@@ -51,7 +51,6 @@ export const ServicesSection = () => {
               <div className="service-content">
                 <h3 className="service-card-title">{service.title}</h3>
                 <p className="service-description">{service.description}</p>
-                <button className="service-button">Learn More</button>
               </div>
             </div>
           ))}

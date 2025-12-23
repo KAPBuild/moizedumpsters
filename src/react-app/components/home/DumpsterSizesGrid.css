@@ -124,26 +124,23 @@
 
 .card-button {
   font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 11px;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  background-color: #333333;
-  color: white;
-  border: none;
-  padding: 14px 30px;
+  letter-spacing: 0.5px;
+  background-color: transparent;
+  color: #666666;
+  border: 1px solid #d0d0d0;
+  padding: 8px 16px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   align-self: flex-start;
+  border-radius: 4px;
 }
 
 .card-button:hover {
-  background-color: #ff6b00;
-  transform: translateX(5px);
-}
-
-.card-button:active {
-  transform: translateX(5px) scale(0.98);
+  border-color: #ff6b00;
+  color: #ff6b00;
 }
 
 /* RESPONSIVE - TABLET */
@@ -189,8 +186,8 @@
   }
 
   .card-button {
-    font-size: 12px;
-    padding: 12px 26px;
+    font-size: 10px;
+    padding: 7px 14px;
   }
 }
 

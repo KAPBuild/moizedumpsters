@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { CONTACT_INFO } from '../../constants/contact';
 import './ProcessSection.css';
 
@@ -74,11 +75,10 @@ export const ProcessSection = () => {
             />
           </div>
 
-          {/* CTA Box */}
-          <div className="process-cta">
-            <p className="cta-main">Questions? Need a quote?</p>
-            <p className="cta-sub">Contact our friendly team!</p>
-          </div>
+          {/* CTA Button */}
+          <Link to="/request" className="process-cta">
+            Request a Dumpster
+          </Link>
         </div>
       </div>
     </section>
