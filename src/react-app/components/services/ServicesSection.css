@@ -78,7 +78,7 @@
   left: 0;
   right: 0;
   height: 5px;
-  background-color: #ff6b00;
+  background-color: #39c318;
 }
 
 /* CARD CONTENT */
@@ -115,7 +115,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  background-color: #1f2937;
+  background-color: #1a0a3d;
   color: white;
   border: none;
   padding: 15px 30px;
@@ -126,8 +126,8 @@
 }
 
 .service-button:hover {
-  background-color: #111827;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-color: #3d1a8a;
+  box-shadow: 0 4px 12px rgba(61, 26, 138, 0.3);
 }
 
 .service-button:active {

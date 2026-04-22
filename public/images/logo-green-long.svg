@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 100" width="480" height="100">
   <!-- Dumpster Icon (compact horizontal) -->
-  <rect x="10" y="22" width="68" height="48" rx="3" ry="3" fill="#16a34a"/>
-  <rect x="10" y="16" width="68" height="12" rx="2" ry="2" fill="#15803d"/>
-  <rect x="20" y="8" width="20" height="10" rx="2" ry="2" fill="#15803d"/>
-  <rect x="48" y="8" width="20" height="10" rx="2" ry="2" fill="#15803d"/>
-  <rect x="10" y="38" width="68" height="3" fill="#15803d" opacity="0.5"/>
-  <rect x="10" y="52" width="68" height="3" fill="#15803d" opacity="0.5"/>
-  <circle cx="24" cy="73" r="7" fill="#111827"/>
-  <circle cx="24" cy="73" r="3.5" fill="#374151"/>
-  <circle cx="64" cy="73" r="7" fill="#111827"/>
-  <circle cx="64" cy="73" r="3.5" fill="#374151"/>
+  <rect x="10" y="22" width="68" height="48" rx="3" ry="3" fill="#39c318"/>
+  <rect x="10" y="16" width="68" height="12" rx="2" ry="2" fill="#2da812"/>
+  <rect x="20" y="8" width="20" height="10" rx="2" ry="2" fill="#2da812"/>
+  <rect x="48" y="8" width="20" height="10" rx="2" ry="2" fill="#2da812"/>
+  <rect x="10" y="38" width="68" height="3" fill="#2da812" opacity="0.5"/>
+  <rect x="10" y="52" width="68" height="3" fill="#2da812" opacity="0.5"/>
+  <circle cx="24" cy="73" r="7" fill="#1a0a3d"/>
+  <circle cx="24" cy="73" r="3.5" fill="#3d1a8a"/>
+  <circle cx="64" cy="73" r="7" fill="#1a0a3d"/>
+  <circle cx="64" cy="73" r="3.5" fill="#3d1a8a"/>
   <!-- Company Name -->
-  <text x="100" y="42" font-family="Arial Black, Helvetica, sans-serif" font-weight="900" font-size="34" fill="#111827" letter-spacing="3">MOIZE</text>
-  <text x="100" y="70" font-family="Arial Black, Helvetica, sans-serif" font-weight="900" font-size="22" fill="#16a34a" letter-spacing="4">DUMPSTERS</text>
-  <text x="368" y="70" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="14" fill="#6b7280" letter-spacing="2">LLC</text>
+  <text x="100" y="42" font-family="Arial Black, Helvetica, sans-serif" font-weight="900" font-size="34" fill="#1a0a3d" letter-spacing="3">MOIZE</text>
+  <text x="100" y="70" font-family="Arial Black, Helvetica, sans-serif" font-weight="900" font-size="22" fill="#39c318" letter-spacing="4">DUMPSTERS</text>
+  <text x="368" y="70" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="14" fill="#3d1a8a" letter-spacing="2">LLC</text>
 </svg>

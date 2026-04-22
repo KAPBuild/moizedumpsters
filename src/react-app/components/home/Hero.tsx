@@ -20,6 +20,11 @@ export const Hero = () => {
       <div className="hero-container">
         {/* Left Side - 40% */}
         <div className="hero-left">
+          {/* Logo Badge */}
+          <div className="hero-logo-badge">
+            <img src="/images/logo-green.svg" alt="Moize Dumpsters" className="hero-logo-img" />
+          </div>
+
           <h1 className="hero-title">DUMPSTER RENTAL CAPITAL REGION</h1>
 
           {/* Checkmark Bullets */}

@@ -81,7 +81,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: #ff6b00;
+  background-color: #3d1a8a;
   color: white;
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
@@ -97,7 +97,7 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  border-top: 3px solid #ff6b00;
+  border-top: 3px solid #39c318;
 }
 
 .card-title {
@@ -139,8 +139,8 @@
 }
 
 .card-button:hover {
-  border-color: #ff6b00;
-  color: #ff6b00;
+  border-color: #39c318;
+  color: #39c318;
 }
 
 /* RESPONSIVE - TABLET */
