@@ -57,11 +57,11 @@ export const HomePageStyleB = () => {
   ];
 
   const sizes = [
-    { size: '10 YD', dims: "3.5' × 8' × 12'", img: '/images/ROll-OFF.png', tag: 'Small', color: '#e0e7ff' },
+    { size: '10 YD', dims: "3.5' × 8' × 12'", img: '/images/residential-dumpsters.jpg', tag: 'Small', color: '#e0e7ff' },
     { size: '15 YD', dims: "6' × 8' × 16'", img: '/images/dumpsters/15yd-front.jpg', tag: 'Medium', color: '#ddd6fe' },
     { size: '20 YD', dims: "6' × 8' × 22'", img: '/images/dumpsters/20yd-front.jpg', tag: 'Popular', color: '#c4b5fd' },
     { size: '30 YD', dims: "6' × 8' × 22'", img: '/images/dumpsters/30yd-front.jpg', tag: 'Large', color: '#a78bfa' },
-    { size: '40 YD', dims: "8' × 8' × 22'", img: '/images/ROll-OFF.png', tag: 'X-Large', color: '#8b5cf6' },
+    { size: '40 YD', dims: "8' × 8' × 22'", img: '/images/commercial-waste-disposal.jpg', tag: 'X-Large', color: '#8b5cf6' },
   ];
 
   return (

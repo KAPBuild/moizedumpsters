@@ -49,11 +49,11 @@ export const HomePageStyleC = () => {
   ];
 
   const sizes = [
-    { size: '10 YD', dims: "3.5' × 8' × 12'", img: '/images/ROll-OFF.png' },
+    { size: '10 YD', dims: "3.5' × 8' × 12'", img: '/images/residential-dumpsters.jpg' },
     { size: '15 YD', dims: "6' × 8' × 16'", img: '/images/dumpsters/15yd-front.jpg' },
     { size: '20 YD', dims: "6' × 8' × 22'", img: '/images/dumpsters/20yd-front.jpg' },
     { size: '30 YD', dims: "6' × 8' × 22'", img: '/images/dumpsters/30yd-front.jpg' },
-    { size: '40 YD', dims: "8' × 8' × 22'", img: '/images/ROll-OFF.png' },
+    { size: '40 YD', dims: "8' × 8' × 22'", img: '/images/commercial-waste-disposal.jpg' },
   ];
 
   return (

@@ -37,11 +37,11 @@ export const HomePageStyleA = () => {
   ];
 
   const sizes = [
-    { size: '10 YD', dims: "3.5'H × 8'W × 12'L", img: '/images/ROll-OFF.png', note: 'Small cleanouts & tight spaces' },
+    { size: '10 YD', dims: "3.5'H × 8'W × 12'L", img: '/images/residential-dumpsters.jpg', note: 'Small cleanouts & tight spaces' },
     { size: '15 YD', dims: "6'H × 8'W × 16'L", img: '/images/dumpsters/15yd-front.jpg', note: 'Small to mid-size renovations' },
     { size: '20 YD', dims: "6'H × 8'W × 22'L", img: '/images/dumpsters/20yd-front.jpg', note: 'Mid-size projects & roofing' },
     { size: '30 YD', dims: "6'H × 8'W × 22'L", img: '/images/dumpsters/30yd-front.jpg', note: 'Large renovations & additions' },
-    { size: '40 YD', dims: "8'H × 8'W × 22'L", img: '/images/ROll-OFF.png', note: 'Major construction & commercial' },
+    { size: '40 YD', dims: "8'H × 8'W × 22'L", img: '/images/commercial-waste-disposal.jpg', note: 'Major construction & commercial' },
   ];
 
   return (

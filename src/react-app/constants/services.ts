@@ -35,7 +35,7 @@ export const DUMPSTER_SIZES: DumpsterSize[] = [
       'Yard waste removal',
     ],
     description: 'Great for medium residential projects',
-    image: '/images/residential-dumpsters.jpg',
+    image: '/images/dumpsters/15yd-front.jpg',
   },
   {
     size: '20 Yard',
@@ -77,7 +77,7 @@ export const DUMPSTER_SIZES: DumpsterSize[] = [
       'Commercial renovations',
     ],
     description: 'Ideal for large-scale residential and commercial projects',
-    image: '/images/construction-dumpsters-pickup.jpg',
+    image: '/images/dumpsters/30yd-front.jpg',
   },
   {
     size: '40 Yard',
@@ -91,7 +91,7 @@ export const DUMPSTER_SIZES: DumpsterSize[] = [
       'Large-scale cleanouts',
     ],
     description: 'Our largest option for the biggest projects',
-    image: '/images/ROll-OFF.png',
+    image: '/images/commercial-waste-disposal.jpg',
   },
 ];
 
