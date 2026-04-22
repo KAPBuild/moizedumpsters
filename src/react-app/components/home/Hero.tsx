@@ -22,7 +22,7 @@ export const Hero = () => {
         <div className="hero-left">
           {/* Logo Badge */}
           <div className="hero-logo-badge">
-            <img src="/images/logo-green.svg" alt="Moize Dumpsters" className="hero-logo-img" />
+            <img src="/images/logo-green.png" alt="Moize Dumpsters" className="hero-logo-img" />
           </div>
 
           <h1 className="hero-title">DUMPSTER RENTAL CAPITAL REGION</h1>

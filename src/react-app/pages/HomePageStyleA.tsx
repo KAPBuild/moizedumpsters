@@ -52,7 +52,7 @@ export const HomePageStyleA = () => {
       <section className="sa-hero">
         <div className="sa-hero-inner">
           <div className="sa-hero-left">
-            <img src="/images/logo-green.svg" alt="Moize Dumpsters" className="sa-hero-logo" />
+            <img src="/images/logo-green.png" alt="Moize Dumpsters" className="sa-hero-logo" />
             <h1 className="sa-hero-title">
               DUMPSTER RENTAL<br />
               <span className="sa-hero-accent">CAPITAL REGION</span>

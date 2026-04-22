@@ -23,7 +23,7 @@ export const Header = () => {
         <div className="header-center">
           <Link to="/" className="header-logo" onClick={closeMenu}>
             <img
-              src="/images/logo-green.svg"
+              src="/images/logo-green.png"
               alt="Moize Dumpsters Logo"
               className="logo-image"
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}

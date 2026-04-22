@@ -72,7 +72,7 @@ export const HomePageStyleB = () => {
       <section className="sb-hero">
         <div className="sb-hero-inner">
           <div className="sb-hero-content">
-            <img src="/images/logo-purple.svg" alt="Moize Dumpsters" className="sb-hero-logo" />
+            <img src="/images/logo-purple.png" alt="Moize Dumpsters" className="sb-hero-logo" />
             <div className="sb-hero-pills">
               <span className="sb-pill">Free Quotes</span>
               <span className="sb-pill">Fast Delivery</span>
@@ -199,7 +199,7 @@ export const HomePageStyleB = () => {
       {/* CTA */}
       <section className="sb-cta">
         <div className="sb-cta-inner">
-          <img src="/images/logo-purple.svg" alt="Moize Dumpsters" className="sb-cta-logo" />
+          <img src="/images/logo-purple.png" alt="Moize Dumpsters" className="sb-cta-logo" />
           <h2 className="sb-cta-title">Ready to clean up?</h2>
           <p className="sb-cta-sub">Get a free quote in minutes. No commitment required.</p>
           <div className="sb-cta-actions">

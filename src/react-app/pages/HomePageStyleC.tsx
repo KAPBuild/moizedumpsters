@@ -88,7 +88,7 @@ export const HomePageStyleC = () => {
           </div>
           <div className="sc-hero-right">
             <div className="sc-dumpster-frame">
-              <img src="/images/logo-green-long.svg" alt="Moize Dumpsters" className="sc-hero-wordmark" />
+              <img src="/images/logo-green-long.png" alt="Moize Dumpsters" className="sc-hero-wordmark" />
               <img src="/images/ROll-OFF.png" alt="Dumpster" className="sc-hero-dumpster" />
             </div>
           </div>

@@ -13,7 +13,7 @@ export const HomePage = () => {
       <div className="brand-strip">
         <div className="brand-strip-inner">
           <img
-            src="/images/logo-green-long.svg"
+            src="/images/logo-green-long.png"
             alt="Moize Dumpsters LLC"
             className="brand-strip-logo"
           />
