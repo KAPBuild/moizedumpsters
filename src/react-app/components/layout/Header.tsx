@@ -5,6 +5,7 @@ import './Header.css';
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [demosOpen, setDemosOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -12,6 +13,7 @@ export const Header = () => {
 
   const closeMenu = () => {
     setMenuOpen(false);
+    setDemosOpen(false);
   };
 
   return (
@@ -19,7 +21,13 @@ export const Header = () => {
       <div className="header-container">
         {/* Center - Logo and Phone Button */}
         <div className="header-center">
-          <Link to="/" className="header-logo">
+          <Link to="/" className="header-logo" onClick={closeMenu}>
+            <img
+              src="/images/logo-green.svg"
+              alt="Moize Dumpsters Logo"
+              className="logo-image"
+              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+            />
             <div className="logo-text">
               <div className="logo-main">MOIZE DUMPSTERS</div>
               <div className="logo-sub">Residential & Commercial</div>
@@ -42,6 +50,36 @@ export const Header = () => {
           <nav className={`header-nav ${menuOpen ? 'open' : ''}`}>
             <Link to="/dumpsters" className="nav-item" onClick={closeMenu}>DUMPSTERS</Link>
             <Link to="/about-us" className="nav-item" onClick={closeMenu}>ABOUT US</Link>
+
+            {/* Style Demos Dropdown */}
+            <div
+              className="nav-item nav-dropdown-wrapper"
+              onMouseEnter={() => setDemosOpen(true)}
+              onMouseLeave={() => setDemosOpen(false)}
+            >
+              <span className="nav-dropdown-trigger">
+                STYLE DEMOS
+                <svg className="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+              {demosOpen && (
+                <div className="nav-dropdown-menu">
+                  <Link to="/style-a" className="nav-dropdown-item" onClick={closeMenu}>
+                    <span className="demo-dot demo-dot-a"></span>
+                    Style A — Bold Professional
+                  </Link>
+                  <Link to="/style-b" className="nav-dropdown-item" onClick={closeMenu}>
+                    <span className="demo-dot demo-dot-b"></span>
+                    Style B — Clean Modern
+                  </Link>
+                  <Link to="/style-c" className="nav-dropdown-item" onClick={closeMenu}>
+                    <span className="demo-dot demo-dot-c"></span>
+                    Style C — Dark Industrial
+                  </Link>
+                </div>
+              )}
+            </div>
           </nav>
 
           <button className="hamburger-menu" onClick={toggleMenu}>

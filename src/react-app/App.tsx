@@ -5,6 +5,9 @@ import { AboutPage } from './pages/AboutPage';
 import { RequestPage } from './pages/RequestPage';
 import { ContactPage } from './pages/ContactPage';
 import { FAQPage } from './pages/FAQPage';
+import { HomePageStyleA } from './pages/HomePageStyleA';
+import { HomePageStyleB } from './pages/HomePageStyleB';
+import { HomePageStyleC } from './pages/HomePageStyleC';
 
 function App() {
   return (
@@ -17,6 +20,9 @@ function App() {
           <Route path="faq" element={<FAQPage />} />
           <Route path="request" element={<RequestPage />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="style-a" element={<HomePageStyleA />} />
+          <Route path="style-b" element={<HomePageStyleB />} />
+          <Route path="style-c" element={<HomePageStyleC />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -12,25 +12,25 @@ export const DumpsterSizesGrid = () => {
     {
       size: '15 Yard',
       dimensions: "6'H x 8'W x 16'L",
-      description: 'Our 15-yard dumpsters are perfect for small to medium-sized renovation projects and...',
-      image: '/images/ROll-OFF.png',
+      description: 'Our 15-yard dumpsters are perfect for small to medium-sized renovation projects and cleanouts.',
+      image: '/images/dumpsters/15yd-front.jpg',
     },
     {
       size: '20 Yard',
       dimensions: "6'H x 8'W x 22'L",
-      description: 'Our 20-yard dumpsters are perfect for medium-sized projects, offering ample space at...',
-      image: '/images/ROll-OFF.png',
+      description: 'Our 20-yard dumpsters are perfect for medium-sized projects, offering ample space at an affordable price.',
+      image: '/images/dumpsters/20yd-front.jpg',
     },
     {
       size: '30 Yard',
       dimensions: "6'H x 8'W x 22'L",
-      description: 'Our 30-yard dumpsters are perfect for larger projects like renovations, home...',
-      image: '/images/ROll-OFF.png',
+      description: 'Our 30-yard dumpsters are perfect for larger projects like renovations, home additions, and major cleanouts.',
+      image: '/images/dumpsters/30yd-front.jpg',
     },
     {
       size: '40 Yard',
       dimensions: "8'H x 8'W x 22'L",
-      description: 'Our 40 yard dumpsters are large and perfect for big construction projects or...',
+      description: 'Our 40 yard dumpsters are large and perfect for big construction projects or commercial waste disposal.',
       image: '/images/ROll-OFF.png',
     },
   ];
