@@ -4,12 +4,6 @@ import './DumpsterSizesGrid.css';
 export const DumpsterSizesGrid = () => {
   const dumpsters = [
     {
-      size: '10 Yard',
-      dimensions: "3.5'H x 8'W x 12'L",
-      description: 'Our 10-yard dumpsters are perfect for small residential cleanouts, garage purges, and minor landscaping projects.',
-      image: '/images/residential-dumpsters.jpg',
-    },
-    {
       size: '15 Yard',
       dimensions: "6'H x 8'W x 16'L",
       description: 'Our 15-yard dumpsters are perfect for small to medium-sized renovation projects and cleanouts.',
@@ -27,12 +21,6 @@ export const DumpsterSizesGrid = () => {
       description: 'Our 30-yard dumpsters are perfect for larger projects like renovations, home additions, and major cleanouts.',
       image: '/images/dumpsters/30yd-front.jpg',
     },
-    {
-      size: '40 Yard',
-      dimensions: "8'H x 8'W x 22'L",
-      description: 'Our 40-yard dumpsters are built for large-scale construction sites, commercial jobs, and complete property cleanouts.',
-      image: '/images/commercial-waste-disposal.jpg',
-    },
   ];
 
   return (
@@ -42,7 +30,7 @@ export const DumpsterSizesGrid = () => {
         <div className="sizes-header">
           <h2 className="sizes-title">DUMPSTER SIZES</h2>
           <p className="sizes-description">
-            We offer a wide selection of container sizes including 10, 15, 20, 30, and 40-yard options. Whether it's a small cleanup or a major renovation, we've got the right dumpster for your residential or commercial project.
+            We offer 15, 20, and 30-yard containers to cover any job — from small residential cleanouts to major renovation and construction projects. Every dumpster you see here is from our fleet.
           </p>
         </div>
 

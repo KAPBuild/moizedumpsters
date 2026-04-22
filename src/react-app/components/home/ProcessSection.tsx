@@ -64,13 +64,13 @@ export const ProcessSection = () => {
           {/* Images */}
           <div className="process-images">
             <img
-              src="/images/residential-dumpsters.jpg"
-              alt="Residential Dumpster"
+              src="/images/dumpsters/20yd-front.jpg"
+              alt="20 Yard Dumpster"
               className="process-image"
             />
             <img
-              src="/images/construction-dumpsters-pickup.jpg"
-              alt="Construction Dumpster"
+              src="/images/dumpsters/30yd-front.jpg"
+              alt="30 Yard Dumpster"
               className="process-image"
             />
           </div>
