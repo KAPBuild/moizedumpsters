@@ -60,7 +60,7 @@ export const HomePageStyleB = () => {
     {
       size: '15 YD',
       dims: "6' × 8' × 16'",
-      img: '/images/dumpsters/15yd-front.jpg',
+      img: '/images/dumpsters/15yd-side.jpg',
       tag: 'Standard',
       color: '#ddd6fe',
       fits: '~4 truck loads',
@@ -69,7 +69,7 @@ export const HomePageStyleB = () => {
     {
       size: '20 YD',
       dims: "6' × 8' × 22'",
-      img: '/images/dumpsters/20yd-front.jpg',
+      img: '/images/dumpsters/20yd-side.jpg',
       tag: 'Most Popular',
       color: '#c4b5fd',
       fits: '~6 truck loads',
@@ -78,7 +78,7 @@ export const HomePageStyleB = () => {
     {
       size: '30 YD',
       dims: "6' × 8' × 22'",
-      img: '/images/dumpsters/30yd-front.jpg',
+      img: '/images/dumpsters/30yd-side.jpg',
       tag: 'Large',
       color: '#a78bfa',
       fits: '~9 truck loads',

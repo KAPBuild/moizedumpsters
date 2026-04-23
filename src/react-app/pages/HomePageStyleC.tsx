@@ -49,9 +49,9 @@ export const HomePageStyleC = () => {
   ];
 
   const sizes = [
-    { size: '15 YD', dims: "6' × 8' × 16'", img: '/images/dumpsters/15yd-front.jpg' },
-    { size: '20 YD', dims: "6' × 8' × 22'", img: '/images/dumpsters/20yd-front.jpg' },
-    { size: '30 YD', dims: "6' × 8' × 22'", img: '/images/dumpsters/30yd-front.jpg' },
+    { size: '15 YD', dims: "6' × 8' × 16'", img: '/images/dumpsters/15yd-side.jpg' },
+    { size: '20 YD', dims: "6' × 8' × 22'", img: '/images/dumpsters/20yd-side.jpg' },
+    { size: '30 YD', dims: "6' × 8' × 22'", img: '/images/dumpsters/30yd-side.jpg' },
   ];
 
   return (
