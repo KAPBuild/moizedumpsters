@@ -1,6 +1,6 @@
 /* =============================================
    STYLE A — BOLD & PROFESSIONAL
-   Palette: Navy #1e293b | Orange #ff6b00 | Green #10b981
+   Palette: Navy #1e293b | Orange #3d1a8a | Green #39c318
    ============================================= */
 
 .sa-page {
@@ -32,7 +32,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #ff6b00;
+  background-color: #39c318;
   display: inline-block;
 }
 
@@ -59,12 +59,12 @@
 }
 
 .sa-demo-main {
-  color: #10b981;
-  border-color: #10b981;
+  color: #39c318;
+  border-color: #39c318;
 }
 
 .sa-demo-main:hover {
-  background-color: #10b981;
+  background-color: #39c318;
   color: white;
 }
 
@@ -111,7 +111,7 @@
 }
 
 .sa-hero-accent {
-  color: #ff6b00;
+  color: #39c318;
 }
 
 .sa-hero-benefits {
@@ -133,7 +133,7 @@
 }
 
 .sa-check {
-  color: #10b981;
+  color: #39c318;
   font-size: 18px;
   font-weight: 700;
   flex-shrink: 0;
@@ -147,7 +147,7 @@
 }
 
 .sa-btn-primary {
-  background-color: #ff6b00;
+  background-color: #3d1a8a;
   color: white;
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
@@ -163,9 +163,9 @@
 }
 
 .sa-btn-primary:hover {
-  background-color: #e55a00;
+  background-color: #1a0a3d;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 107, 0, 0.35);
+  box-shadow: 0 6px 20px rgba(61, 26, 138, 0.35);
 }
 
 .sa-btn-ghost {
@@ -209,7 +209,7 @@
 
 /* STATS BAR */
 .sa-stats-bar {
-  background-color: #ff6b00;
+  background-color: #3d1a8a;
   display: flex;
   justify-content: center;
   gap: 0;
@@ -255,7 +255,7 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 2px;
-  color: #ff6b00;
+  color: #39c318;
   text-transform: uppercase;
   margin: 0 0 12px;
 }
@@ -292,13 +292,13 @@
   border-radius: 12px;
   padding: 36px 32px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  border-top: 4px solid #10b981;
+  border-top: 4px solid #39c318;
 }
 
 .sa-step-number {
   font-size: 48px;
   font-weight: 900;
-  color: #ff6b00;
+  color: #39c318;
   line-height: 1;
   margin-bottom: 16px;
   letter-spacing: -2px;
@@ -365,7 +365,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background-color: #ff6b00;
+  background-color: #39c318;
 }
 
 .sa-service-body {
@@ -387,7 +387,7 @@
 }
 
 .sa-service-link {
-  color: #ff6b00;
+  color: #3d1a8a;
   text-decoration: none;
   font-weight: 700;
   font-size: 14px;
@@ -395,7 +395,7 @@
 }
 
 .sa-service-link:hover {
-  color: #e55a00;
+  color: #1a0a3d;
 }
 
 /* DUMPSTER SIZES */
@@ -421,7 +421,7 @@
 .sa-size-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  border-color: #10b981;
+  border-color: #39c318;
 }
 
 .sa-size-img-wrap {
