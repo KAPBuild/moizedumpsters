@@ -5,17 +5,17 @@ export const Services = () => {
     {
       title: 'Residential Dumpsters',
       description: 'Perfect for home renovations, cleanouts, and landscaping projects. Affordable and convenient waste management for homeowners.',
-      image: '/images/residential-dumpsters.jpg',
+      image: '/images/dumpsters/15yd-front.jpg',
     },
     {
       title: 'Construction Dumpsters',
       description: 'Heavy-duty dumpster solutions for construction sites and building projects of any scale. Reliable debris removal.',
-      image: '/images/construction-dumpsters-pickup.jpg',
+      image: '/images/dumpsters/20yd-front.jpg',
     },
     {
       title: 'Commercial Dumpsters',
       description: 'Efficient waste management for businesses, offices, and retail locations. Tailored to your business needs.',
-      image: '/images/commercial-waste-disposal.jpg',
+      image: '/images/dumpsters/30yd-front.jpg',
     },
   ];
 
