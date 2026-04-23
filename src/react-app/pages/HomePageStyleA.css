@@ -538,6 +538,166 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* HERO PHONE */
+.sa-hero-phone {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.sa-hero-phone-label {
+  font-size: 12px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.sa-hero-phone-number {
+  font-size: 26px;
+  font-weight: 900;
+  color: #39c318;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  transition: color 0.2s ease;
+}
+
+.sa-hero-phone-number:hover {
+  color: white;
+}
+
+/* SERVICE BULLETS */
+.sa-service-bullets {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sa-service-bullet {
+  font-size: 13px;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sa-bullet-check {
+  color: #39c318;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* SIZE FITS */
+.sa-size-fits {
+  font-size: 12px;
+  color: #3d1a8a;
+  font-weight: 600;
+}
+
+/* WHY US */
+.sa-why {
+  background-color: #1e293b;
+}
+
+.sa-why .sa-section-tag {
+  color: #39c318;
+}
+
+.sa-why .sa-section-title {
+  color: white;
+}
+
+.sa-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.sa-why-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 32px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.sa-why-card:hover {
+  border-color: #39c318;
+}
+
+.sa-why-icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.sa-why-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 10px;
+}
+
+.sa-why-desc {
+  font-size: 14px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* TESTIMONIALS */
+.sa-testimonials {
+  background-color: #f8fafc;
+}
+
+.sa-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.sa-review-card {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-bottom: 4px solid #39c318;
+}
+
+.sa-review-stars {
+  color: #f59e0b;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.sa-review-text {
+  font-size: 15px;
+  color: #334155;
+  line-height: 1.7;
+  margin: 0 0 20px;
+  font-style: italic;
+}
+
+.sa-review-author {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sa-review-author strong {
+  font-size: 14px;
+  color: #1e293b;
+}
+
+.sa-review-author span {
+  font-size: 13px;
+  color: #64748b;
+}
+
 /* RESPONSIVE */
 @media (max-width: 1024px) {
   .sa-hero-inner { grid-template-columns: 1fr; padding: 50px 40px; }
@@ -546,6 +706,8 @@
   .sa-steps { grid-template-columns: 1fr; }
   .sa-services-grid { grid-template-columns: 1fr; }
   .sa-section-inner { padding: 60px 40px; }
+  .sa-why-grid { grid-template-columns: repeat(2, 1fr); }
+  .sa-reviews-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {

@@ -606,6 +606,243 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
+/* SERVICE TAGLINE & BULLETS */
+.sb-service-tagline {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #7c3aed;
+  margin-bottom: 6px;
+}
+
+.sb-service-bullets {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sb-service-bullets li {
+  font-size: 13px;
+  color: #475569;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.sb-bullet {
+  color: #7c3aed;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* SIZE FITS */
+.sb-size-fits {
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+
+/* MISSION */
+.sb-mission {
+  background-color: #f8fafc;
+  padding: 80px 60px;
+}
+
+.sb-mission-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.sb-mission-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 8px 0 16px;
+  letter-spacing: -0.5px;
+}
+
+.sb-mission-desc {
+  font-size: 16px;
+  color: #475569;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.sb-mission-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sb-mstat {
+  border-left: 4px solid #7c3aed;
+  padding-left: 24px;
+}
+
+.sb-mstat-val {
+  font-size: 40px;
+  font-weight: 900;
+  color: #1e293b;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.sb-mstat-label {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* MATERIALS */
+.sb-materials {
+  background-color: #ffffff;
+}
+
+.sb-materials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.sb-materials-col {
+  border-radius: 12px;
+  padding: 36px;
+}
+
+.sb-accepted {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.sb-not-accepted {
+  background-color: #fff1f2;
+  border: 1px solid #fecdd3;
+}
+
+.sb-materials-heading {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sb-heading-yes {
+  color: #15803d;
+}
+
+.sb-heading-no {
+  color: #be123c;
+}
+
+.sb-heading-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.sb-heading-yes .sb-heading-icon {
+  background-color: #15803d;
+  color: white;
+}
+
+.sb-heading-no .sb-heading-icon {
+  background-color: #be123c;
+  color: white;
+}
+
+.sb-materials-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sb-materials-list li {
+  font-size: 14px;
+  color: #334155;
+  padding-left: 16px;
+  position: relative;
+}
+
+.sb-materials-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #94a3b8;
+}
+
+/* TESTIMONIALS */
+.sb-testimonials {
+  background-color: #f8fafc;
+}
+
+.sb-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.sb-review-card {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  border-top: 4px solid #7c3aed;
+}
+
+.sb-review-stars {
+  color: #f59e0b;
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.sb-review-text {
+  font-size: 15px;
+  color: #334155;
+  line-height: 1.7;
+  margin: 0 0 20px;
+  font-style: italic;
+}
+
+.sb-review-author {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sb-review-author strong {
+  font-size: 14px;
+  color: #1e293b;
+}
+
+.sb-review-author span {
+  font-size: 13px;
+  color: #64748b;
+}
+
 /* RESPONSIVE */
 @media (max-width: 1200px) {
   .sb-sizes-grid { grid-template-columns: repeat(3, 1fr); }
@@ -619,6 +856,10 @@
   .sb-services-grid { grid-template-columns: 1fr; }
   .sb-section-inner { padding: 70px 40px; }
   .sb-sizes-grid { grid-template-columns: repeat(2, 1fr); }
+  .sb-mission-inner { grid-template-columns: 1fr; gap: 40px; }
+  .sb-mission { padding: 60px 40px; }
+  .sb-materials-grid { grid-template-columns: 1fr; }
+  .sb-reviews-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
