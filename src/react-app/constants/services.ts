@@ -21,7 +21,7 @@ export const DUMPSTER_SIZES: DumpsterSize[] = [
       'Small deck removal',
     ],
     description: 'Perfect for small residential projects and cleanouts',
-    image: '/images/dumpsters/15yd-all.jpeg',
+    image: '/images/dumpsters/15yd-front.jpg',
   },
   {
     size: '15 Yard',
@@ -35,7 +35,7 @@ export const DUMPSTER_SIZES: DumpsterSize[] = [
       'Yard waste removal',
     ],
     description: 'Great for medium residential projects',
-    image: '/images/dumpsters/15yd-all.jpeg',
+    image: '/images/dumpsters/15yd-front.jpg',
   },
   {
     size: '20 Yard',
@@ -49,7 +49,7 @@ export const DUMPSTER_SIZES: DumpsterSize[] = [
       'Garage or basement cleanouts',
     ],
     description: 'Most popular size for home renovation projects',
-    image: '/images/dumpsters/20yd-all.jpeg',
+    image: '/images/dumpsters/20yd-front.jpg',
   },
   {
     size: '25 Yard',
@@ -63,7 +63,7 @@ export const DUMPSTER_SIZES: DumpsterSize[] = [
       'Whole room demolition',
     ],
     description: 'Ideal for major renovation and construction projects',
-    image: '/images/dumpsters/20yd-all.jpeg',
+    image: '/images/dumpsters/20yd-front.jpg',
   },
   {
     size: '30 Yard',
@@ -77,7 +77,7 @@ export const DUMPSTER_SIZES: DumpsterSize[] = [
       'Commercial renovations',
     ],
     description: 'Ideal for large-scale residential and commercial projects',
-    image: '/images/dumpsters/30yd-all.jpeg',
+    image: '/images/dumpsters/30yd-front.jpg',
   },
   {
     size: '40 Yard',
@@ -91,7 +91,7 @@ export const DUMPSTER_SIZES: DumpsterSize[] = [
       'Large-scale cleanouts',
     ],
     description: 'Our largest option for the biggest projects',
-    image: '/images/dumpsters/30yd-all.jpeg',
+    image: '/images/dumpsters/30yd-front.jpg',
   },
 ];
 
