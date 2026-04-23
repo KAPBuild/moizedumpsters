@@ -4,19 +4,19 @@ export const ServicesSection = () => {
   const services = [
     {
       title: 'Residential Dumpsters',
-      image: '/images/dumpsters/15yd-front.jpg',
+      image: '/images/dumpsters/15yd-all.jpeg',
       description:
         'Rent affordable residential dumpsters for your home renovation, cleanup, and landscaping projects. Perfect for homeowners who need reliable waste management solutions.',
     },
     {
       title: 'Construction Dumpsters',
-      image: '/images/dumpsters/20yd-front.jpg',
+      image: '/images/dumpsters/20yd-all.jpeg',
       description:
         'We offer a variety of construction dumpsters to fit your specific project needs. From small renovations to large-scale construction sites, we have you covered.',
     },
     {
       title: 'Commercial Dumpsters',
-      image: '/images/dumpsters/30yd-front.jpg',
+      image: '/images/dumpsters/30yd-all.jpeg',
       description:
         'Our commercial dumpsters are perfect for construction sites, businesses, and any commercial waste disposal needs. Reliable service for all your business requirements.',
     },

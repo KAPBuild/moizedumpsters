@@ -28,30 +28,30 @@ export const HomePageStyleC = () => {
     {
       title: 'RESIDENTIAL',
       subtitle: 'Home Cleanouts & Renovations',
-      img: '/images/dumpsters/15yd-front.jpg',
+      img: '/images/dumpsters/15yd-all.jpeg',
       desc: 'Home renovations, garage cleanouts, yard waste, and remodeling debris. We deliver, you fill it, we haul it.',
       align: 'left' as const,
     },
     {
       title: 'CONSTRUCTION',
       subtitle: 'Job Sites & Demolition',
-      img: '/images/dumpsters/20yd-front.jpg',
+      img: '/images/dumpsters/20yd-all.jpeg',
       desc: 'Concrete, drywall, lumber, roofing, and heavy construction debris. Built tough for tough jobs.',
       align: 'right' as const,
     },
     {
       title: 'COMMERCIAL',
       subtitle: 'Business & Industrial',
-      img: '/images/dumpsters/30yd-front.jpg',
+      img: '/images/dumpsters/30yd-all.jpeg',
       desc: 'Ongoing commercial waste management for businesses, retail, and industrial sites across the Capital Region.',
       align: 'left' as const,
     },
   ];
 
   const sizes = [
-    { size: '15 YD', dims: "6' × 8' × 16'", img: '/images/dumpsters/15yd-front.jpg' },
-    { size: '20 YD', dims: "6' × 8' × 22'", img: '/images/dumpsters/20yd-front.jpg' },
-    { size: '30 YD', dims: "6' × 8' × 22'", img: '/images/dumpsters/30yd-front.jpg' },
+    { size: '15 YD', dims: "6' × 8' × 16'", img: '/images/dumpsters/15yd-all.jpeg' },
+    { size: '20 YD', dims: "6' × 8' × 22'", img: '/images/dumpsters/20yd-all.jpeg' },
+    { size: '30 YD', dims: "6' × 8' × 22'", img: '/images/dumpsters/30yd-all.jpeg' },
   ];
 
   return (

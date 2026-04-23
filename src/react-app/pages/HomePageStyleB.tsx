@@ -57,9 +57,9 @@ export const HomePageStyleB = () => {
   ];
 
   const sizes = [
-    { size: '15 YD', dims: "6' × 8' × 16'", img: '/images/dumpsters/15yd-front.jpg', tag: 'Medium', color: '#ddd6fe' },
-    { size: '20 YD', dims: "6' × 8' × 22'", img: '/images/dumpsters/20yd-front.jpg', tag: 'Popular', color: '#c4b5fd' },
-    { size: '30 YD', dims: "6' × 8' × 22'", img: '/images/dumpsters/30yd-front.jpg', tag: 'Large', color: '#a78bfa' },
+    { size: '15 YD', dims: "6' × 8' × 16'", img: '/images/dumpsters/15yd-all.jpeg', tag: 'Medium', color: '#ddd6fe' },
+    { size: '20 YD', dims: "6' × 8' × 22'", img: '/images/dumpsters/20yd-all.jpeg', tag: 'Popular', color: '#c4b5fd' },
+    { size: '30 YD', dims: "6' × 8' × 22'", img: '/images/dumpsters/30yd-all.jpeg', tag: 'Large', color: '#a78bfa' },
   ];
 
   return (

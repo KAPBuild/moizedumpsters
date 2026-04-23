@@ -31,15 +31,15 @@ export const HomePageStyleA = () => {
   ];
 
   const services = [
-    { title: 'Residential', img: '/images/dumpsters/15yd-front.jpg', desc: 'Home cleanouts, renovations, and landscaping projects. Reliable service for homeowners.' },
-    { title: 'Construction', img: '/images/dumpsters/20yd-front.jpg', desc: 'Debris removal, demo waste, and large renovation cleanups for contractors and builders.' },
-    { title: 'Commercial', img: '/images/dumpsters/30yd-front.jpg', desc: 'Ongoing commercial waste needs, job-site cleanups, and business waste disposal solutions.' },
+    { title: 'Residential', img: '/images/dumpsters/15yd-all.jpeg', desc: 'Home cleanouts, renovations, and landscaping projects. Reliable service for homeowners.' },
+    { title: 'Construction', img: '/images/dumpsters/20yd-all.jpeg', desc: 'Debris removal, demo waste, and large renovation cleanups for contractors and builders.' },
+    { title: 'Commercial', img: '/images/dumpsters/30yd-all.jpeg', desc: 'Ongoing commercial waste needs, job-site cleanups, and business waste disposal solutions.' },
   ];
 
   const sizes = [
-    { size: '15 YD', dims: "6'H × 8'W × 16'L", img: '/images/dumpsters/15yd-front.jpg', note: 'Small to mid-size renovations' },
-    { size: '20 YD', dims: "6'H × 8'W × 22'L", img: '/images/dumpsters/20yd-front.jpg', note: 'Mid-size projects & roofing' },
-    { size: '30 YD', dims: "6'H × 8'W × 22'L", img: '/images/dumpsters/30yd-front.jpg', note: 'Large renovations & additions' },
+    { size: '15 YD', dims: "6'H × 8'W × 16'L", img: '/images/dumpsters/15yd-all.jpeg', note: 'Small to mid-size renovations' },
+    { size: '20 YD', dims: "6'H × 8'W × 22'L", img: '/images/dumpsters/20yd-all.jpeg', note: 'Mid-size projects & roofing' },
+    { size: '30 YD', dims: "6'H × 8'W × 22'L", img: '/images/dumpsters/30yd-all.jpeg', note: 'Large renovations & additions' },
   ];
 
   return (
