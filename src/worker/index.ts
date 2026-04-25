@@ -15,7 +15,7 @@ app.post("/api/quote", async (c) => {
       return c.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    await sendEmail(c.env.RESEND_API_KEY, {
+    await sendEmail(c.env.RESEND_API_KEY ?? '', {
       subject: `New Quote Request from ${data.name}`,
       html: `
         <h2>New Quote Request</h2>
@@ -49,7 +49,7 @@ app.post("/api/contact", async (c) => {
       return c.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    await sendEmail(c.env.RESEND_API_KEY, {
+    await sendEmail(c.env.RESEND_API_KEY ?? '', {
       subject: `New Contact Form Message from ${data.name}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -73,7 +73,7 @@ app.post("/api/contact", async (c) => {
   }
 });
 
-async function sendEmail(apiKey: string | undefined, { subject, html }: { subject: string; html: string }) {
+async function sendEmail(apiKey: string, { subject, html }: { subject: string; html: string }) {
   if (!apiKey) {
     console.warn("RESEND_API_KEY not set — skipping email send");
     return;
