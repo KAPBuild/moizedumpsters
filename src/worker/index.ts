@@ -73,7 +73,7 @@ app.post("/api/contact", async (c) => {
   }
 });
 
-async function sendEmail(apiKey: string, { subject, html }: { subject: string; html: string }) {
+async function sendEmail(apiKey: string | undefined, { subject, html }: { subject: string; html: string }) {
   if (!apiKey) {
     console.warn("RESEND_API_KEY not set — skipping email send");
     return;
