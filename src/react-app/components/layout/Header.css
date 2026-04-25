@@ -46,8 +46,8 @@
 }
 
 .logo-image {
-  width: 52px;
-  height: 52px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -113,95 +113,6 @@
 .dropdown-arrow {
   font-size: 12px;
   margin-top: -2px;
-}
-
-/* STYLE DEMOS DROPDOWN */
-.nav-dropdown-wrapper {
-  position: relative;
-  cursor: pointer;
-}
-
-.nav-dropdown-trigger {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-family: 'Poppins', 'Montserrat', sans-serif;
-  font-size: 17px;
-  font-weight: 800;
-  color: #1f2937;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  white-space: nowrap;
-  transition: color 0.3s ease;
-}
-
-.nav-dropdown-wrapper:hover .nav-dropdown-trigger {
-  color: #39c318;
-}
-
-.dropdown-chevron {
-  transition: transform 0.2s ease;
-}
-
-.nav-dropdown-wrapper:hover .dropdown-chevron {
-  transform: rotate(180deg);
-}
-
-.nav-dropdown-menu {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-  border: 1px solid #e5e7eb;
-  min-width: 240px;
-  padding: 8px;
-  padding-top: 16px;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.nav-dropdown-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border-radius: 6px;
-  text-decoration: none;
-  color: #374151;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  white-space: nowrap;
-}
-
-.nav-dropdown-item:hover {
-  background-color: #f3f4f6;
-  color: #111827;
-}
-
-.demo-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.demo-dot-a {
-  background-color: #ff6b00;
-}
-
-.demo-dot-b {
-  background-color: #7c3aed;
-}
-
-.demo-dot-c {
-  background-color: #aaff00;
-  border: 1px solid #6b7280;
 }
 
 /* HAMBURGER MENU */

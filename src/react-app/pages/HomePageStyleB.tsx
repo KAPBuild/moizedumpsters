@@ -1,22 +1,38 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CONTACT_INFO } from '../constants/contact';
 import './HomePageStyleB.css';
 
-const DemoBanner = () => (
-  <div className="sb-demo-banner">
-    <span className="sb-demo-label">
-      <span className="sb-demo-dot"></span>
-      PREVIEW: Style B — Clean Modern
-    </span>
-    <div className="sb-demo-links">
-      <Link to="/style-a" className="sb-demo-link">Style A</Link>
-      <Link to="/style-c" className="sb-demo-link">Style C</Link>
-      <Link to="/" className="sb-demo-link sb-demo-main">← Main Site</Link>
-    </div>
-  </div>
-);
-
 export const HomePageStyleB = () => {
+  const [contactForm, setContactForm] = useState({ name: '', phone: '', email: '', message: '' });
+  const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [contactLoading, setContactLoading] = useState(false);
+
+  const handleContactChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setContactForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleContactSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setContactLoading(true);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(contactForm),
+      });
+      if (response.ok) {
+        setContactSubmitted(true);
+        setContactForm({ name: '', phone: '', email: '', message: '' });
+      }
+    } catch (err) {
+      console.error('Contact form error:', err);
+    } finally {
+      setContactLoading(false);
+    }
+  };
+
   const services = [
     {
       icon: (
@@ -127,7 +143,6 @@ export const HomePageStyleB = () => {
 
   return (
     <div className="sb-page">
-      <DemoBanner />
 
       {/* HERO */}
       <section className="sb-hero">
@@ -224,9 +239,21 @@ export const HomePageStyleB = () => {
           </div>
           <div className="sb-steps">
             {[
-              { num: 1, title: 'Tell Us About Your Project', desc: 'Call or fill out our quick online form. We\'ll ask about your project type, location, and timing. Takes 2 minutes.' },
-              { num: 2, title: 'Receive Your Flat-Rate Quote', desc: 'One clear price that includes delivery, pickup, and disposal. No fuel surcharges, no surprise fees at the end.' },
-              { num: 3, title: 'We Deliver & Pick Up', desc: 'Your dumpster arrives on the date you choose. When you\'re done filling it, call us — we\'ll come get it.' },
+              {
+                num: 1,
+                title: 'Tell Me What You Are Throwing Away',
+                desc: 'Give us a quick rundown of what\'s going in the dumpster — furniture, construction debris, yard waste, mixed junk. This helps us point you to the right size and make sure everything is accepted.',
+              },
+              {
+                num: 2,
+                title: 'How Much Are You Throwing Away?',
+                desc: 'Estimate the volume — a couple of boxes or a full renovation gut? We\'ll walk you through our 15, 20, and 30 yard options and make sure you\'re not paying for more than you need.',
+              },
+              {
+                num: 3,
+                title: 'We Deliver & Pick Up',
+                desc: 'Your dumpster arrives on the date you choose. Fill it at your own pace. When you\'re done, call us — we\'ll come get it and handle the rest.',
+              },
             ].map((s) => (
               <div key={s.num} className="sb-step">
                 <div className="sb-step-num">{s.num}</div>
@@ -343,6 +370,125 @@ export const HomePageStyleB = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT FORM */}
+      <section className="sb-contact">
+        <div className="sb-section-inner">
+          <div className="sb-contact-grid">
+            <div className="sb-contact-info">
+              <span className="sb-tag">GET IN TOUCH</span>
+              <h2 className="sb-section-title" style={{ textAlign: 'left' }}>Have Questions?<br />We're Here.</h2>
+              <p className="sb-contact-desc">
+                Fill out the form and we'll get back to you fast — usually the same day. Or give us a call directly.
+              </p>
+              <div className="sb-contact-details">
+                <a href={`tel:${CONTACT_INFO.phone}`} className="sb-contact-detail-item">
+                  <div className="sb-contact-detail-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="sb-contact-detail-label">Phone</div>
+                    <div className="sb-contact-detail-value">{CONTACT_INFO.phone}</div>
+                  </div>
+                </a>
+                <a href={`mailto:${CONTACT_INFO.email}`} className="sb-contact-detail-item">
+                  <div className="sb-contact-detail-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                      <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="sb-contact-detail-label">Email</div>
+                    <div className="sb-contact-detail-value">{CONTACT_INFO.email}</div>
+                  </div>
+                </a>
+                <div className="sb-contact-detail-item">
+                  <div className="sb-contact-detail-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <circle cx="12" cy="12" r="10"/>
+                      <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="sb-contact-detail-label">Hours</div>
+                    <div className="sb-contact-detail-value">Mon–Fri: 7am–6pm · Sat: 8am–4pm</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="sb-contact-form-wrap">
+              {contactSubmitted ? (
+                <div className="sb-contact-success">
+                  <div className="sb-contact-success-icon">✓</div>
+                  <h3>Message Sent!</h3>
+                  <p>We'll get back to you as soon as possible — usually the same day.</p>
+                  <button onClick={() => setContactSubmitted(false)} className="sb-btn-primary">Send Another</button>
+                </div>
+              ) : (
+                <form onSubmit={handleContactSubmit} className="sb-contact-form">
+                  <div className="sb-form-row">
+                    <div className="sb-form-group">
+                      <label htmlFor="cf-name">Full Name *</label>
+                      <input
+                        type="text"
+                        id="cf-name"
+                        name="name"
+                        value={contactForm.name}
+                        onChange={handleContactChange}
+                        required
+                        placeholder="John Smith"
+                      />
+                    </div>
+                    <div className="sb-form-group">
+                      <label htmlFor="cf-phone">Phone Number *</label>
+                      <input
+                        type="tel"
+                        id="cf-phone"
+                        name="phone"
+                        value={contactForm.phone}
+                        onChange={handleContactChange}
+                        required
+                        placeholder="(518) 000-0000"
+                      />
+                    </div>
+                  </div>
+                  <div className="sb-form-group">
+                    <label htmlFor="cf-email">Email Address *</label>
+                    <input
+                      type="email"
+                      id="cf-email"
+                      name="email"
+                      value={contactForm.email}
+                      onChange={handleContactChange}
+                      required
+                      placeholder="john@example.com"
+                    />
+                  </div>
+                  <div className="sb-form-group">
+                    <label htmlFor="cf-message">How Can We Help? *</label>
+                    <textarea
+                      id="cf-message"
+                      name="message"
+                      value={contactForm.message}
+                      onChange={handleContactChange}
+                      required
+                      rows={5}
+                      placeholder="Tell us about your project — what are you throwing away and roughly how much..."
+                    />
+                  </div>
+                  <button type="submit" disabled={contactLoading} className="sb-btn-primary sb-contact-submit">
+                    {contactLoading ? 'Sending...' : 'Send Message'}
+                  </button>
+                </form>
+              )}
+            </div>
           </div>
         </div>
       </section>

@@ -1,6 +1,6 @@
 export const CONTACT_INFO = {
-  phone: '(518) 555-0123',
-  email: 'info@moizedumpsters.com',
+  phone: '518-300-777',
+  email: 'Connor@moizedumpster.com',
   hours: {
     weekdays: 'Monday - Friday: 7:00 AM - 6:00 PM',
     saturday: 'Saturday: 8:00 AM - 4:00 PM',
