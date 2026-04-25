@@ -1,5 +1,5 @@
 export const CONTACT_INFO = {
-  phone: '518-300-777',
+  phone: '518-300-7777',
   email: 'Connor@moizedumpster.com',
   hours: {
     weekdays: 'Monday - Friday: 7:00 AM - 6:00 PM',

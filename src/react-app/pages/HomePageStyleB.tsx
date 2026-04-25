@@ -172,7 +172,7 @@ export const HomePageStyleB = () => {
           </div>
           <div className="sb-hero-image">
             <div className="sb-hero-img-bg">
-              <img src="/images/ROll-OFF.png" alt="Dumpster" className="sb-hero-dumpster" />
+              <img src="/images/dumpsters/truck1.jpg" alt="Moize Dumpsters Truck" className="sb-hero-dumpster" />
             </div>
             <div className="sb-hero-card sb-hero-card-1">
               <div className="sb-hero-card-icon">✓</div>
