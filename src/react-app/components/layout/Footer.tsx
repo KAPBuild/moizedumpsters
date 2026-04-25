@@ -65,10 +65,6 @@ export const Footer = () => {
           <div className="footer-items">
             <a href="/services" className="footer-link footer-link-item">
               <span className="chevron">&gt;</span>
-              <span>10 Yard Dumpsters</span>
-            </a>
-            <a href="/services" className="footer-link footer-link-item">
-              <span className="chevron">&gt;</span>
               <span>15 Yard Dumpsters</span>
             </a>
             <a href="/services" className="footer-link footer-link-item">
@@ -78,10 +74,6 @@ export const Footer = () => {
             <a href="/services" className="footer-link footer-link-item">
               <span className="chevron">&gt;</span>
               <span>30 Yard Dumpsters</span>
-            </a>
-            <a href="/services" className="footer-link footer-link-item">
-              <span className="chevron">&gt;</span>
-              <span>40 Yard Dumpsters</span>
             </a>
           </div>
         </div>

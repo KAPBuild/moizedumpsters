@@ -388,19 +388,7 @@ export const HomePageStyleB = () => {
                     <div className="sb-contact-detail-value">{CONTACT_INFO.phone}</div>
                   </div>
                 </a>
-                <a href={`mailto:${CONTACT_INFO.email}`} className="sb-contact-detail-item">
-                  <div className="sb-contact-detail-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                      <polyline points="22,6 12,13 2,6"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="sb-contact-detail-label">Email</div>
-                    <div className="sb-contact-detail-value">{CONTACT_INFO.email}</div>
-                  </div>
-                </a>
-                <div className="sb-contact-detail-item">
+<div className="sb-contact-detail-item">
                   <div className="sb-contact-detail-icon">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <circle cx="12" cy="12" r="10"/>
