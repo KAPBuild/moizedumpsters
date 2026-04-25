@@ -148,7 +148,6 @@ export const HomePageStyleB = () => {
       <section className="sb-hero">
         <div className="sb-hero-inner">
           <div className="sb-hero-content">
-            <img src="/images/logo-purple.png" alt="Moize Dumpsters" className="sb-hero-logo" />
             <div className="sb-hero-pills">
               <span className="sb-pill">Free Quotes</span>
               <span className="sb-pill">Fast Delivery</span>
