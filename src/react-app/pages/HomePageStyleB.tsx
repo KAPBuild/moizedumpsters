@@ -181,13 +181,6 @@ export const HomePageStyleB = () => {
                 <div className="sb-hero-card-sub">Call before noon</div>
               </div>
             </div>
-            <div className="sb-hero-card sb-hero-card-2">
-              <div className="sb-hero-card-icon">★</div>
-              <div>
-                <div className="sb-hero-card-title">Top Rated Service</div>
-                <div className="sb-hero-card-sub">Capital Region</div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

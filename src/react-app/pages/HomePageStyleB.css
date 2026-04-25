@@ -962,7 +962,8 @@ a.sb-contact-detail-item:hover {
 
 @media (max-width: 1024px) {
   .sb-hero-inner { grid-template-columns: 1fr; padding: 50px 40px; }
-  .sb-hero-image { display: none; }
+  .sb-hero-image { display: flex; justify-content: center; }
+  .sb-hero-img-bg { max-width: 100%; height: 260px; }
   .sb-hero-title { font-size: 42px; }
   .sb-steps { grid-template-columns: 1fr; }
   .sb-services-grid { grid-template-columns: 1fr; }
