@@ -3,6 +3,15 @@ import { Link } from 'react-router-dom';
 import { CONTACT_INFO } from '../../constants/contact';
 import './Header.css';
 
+const ALL_TOWNS = [
+  'Albany', 'Amsterdam', 'Ballston Spa', 'Bethlehem', 'Burnt Hills',
+  'Clifton Park', 'Cohoes', 'Colonie', 'Delmar', 'Duanesburg',
+  'East Greenbush', 'Fonda', 'Fulton County', 'Glens Falls', 'Glenville',
+  'Green Island', 'Guilderland', 'Halfmoon', 'Latham', 'Malta',
+  'Mechanicville', 'Niskayuna', 'Rensselaer', 'Saratoga Springs', 'Scotia',
+  'Schenectady', 'Slingerlands', 'Troy', 'Voorheesville', 'Watervliet',
+];
+
 const NAV_ITEMS = [
   {
     label: 'RESIDENTIAL',
@@ -34,17 +43,6 @@ const NAV_ITEMS = [
     ],
   },
   {
-    label: 'LOCATIONS',
-    path: '/locations',
-    dropdown: [
-      { label: 'Areas We Serve', path: '/locations' },
-      { label: 'Albany', path: '/locations' },
-      { label: 'Schenectady', path: '/locations' },
-      { label: 'Troy', path: '/locations' },
-      { label: 'Saratoga Springs', path: '/locations' },
-    ],
-  },
-  {
     label: 'SUSTAINABILITY',
     path: '/sustainability',
     dropdown: [
@@ -55,7 +53,10 @@ const NAV_ITEMS = [
   },
   { label: 'ABOUT US', path: '/about-us' },
   { label: 'CONTACT', path: '/contact' },
-];
+  { label: 'AREAS WE SERVE', path: '/locations', towns: ALL_TOWNS },
+] as const;
+
+type NavItem = (typeof NAV_ITEMS)[number];
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -75,40 +76,31 @@ export const Header = () => {
     setMobileExpanded(mobileExpanded === label ? null : label);
   };
 
+  const hasDropdown = (item: NavItem) => 'dropdown' in item;
+  const hasTowns = (item: NavItem) => 'towns' in item;
+
   return (
     <header className="header">
-      {/* Row 1: Logo + Phone */}
+      {/* Row 1: Logo centered, phone + hamburger on right */}
       <div className="header-top">
-        {/* Left — phone on mobile, empty on desktop */}
-        <div className="header-top-left">
-          <a href={`tel:${CONTACT_INFO.phone}`} className="phone-button mobile-phone">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-            </svg>
-            <span className="phone-button-text">{CONTACT_INFO.phone}</span>
-          </a>
-        </div>
+        <div className="header-top-spacer" />
 
-        {/* Center — logo always */}
-        <div className="header-top-center">
-          <Link to="/" className="header-logo" onClick={closeMenu}>
-            <img
-              src="/images/logo-green.png"
-              alt="Moize Dumpsters Logo"
-              className="logo-image"
-              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-            />
-            <div className="logo-text">
-              <div className="logo-main">MOIZE DUMPSTERS</div>
-              <div className="logo-sub">Residential & Commercial</div>
-            </div>
-          </Link>
-        </div>
+        <Link to="/" className="header-logo" onClick={closeMenu}>
+          <img
+            src="/images/logo-green.png"
+            alt="Moize Dumpsters Logo"
+            className="logo-image"
+            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+          />
+          <div className="logo-text">
+            <div className="logo-main">MOIZE DUMPSTERS</div>
+            <div className="logo-sub">Residential & Commercial</div>
+          </div>
+        </Link>
 
-        {/* Right — phone+cta on desktop, hamburger on mobile */}
         <div className="header-top-right">
           <div className="cta-label">Call For A Free Quote</div>
-          <a href={`tel:${CONTACT_INFO.phone}`} className="phone-button desktop-phone">
+          <a href={`tel:${CONTACT_INFO.phone}`} className="phone-button">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
             </svg>
@@ -128,15 +120,27 @@ export const Header = () => {
           <div key={item.label} className="nav-item-wrapper">
             <Link to={item.path} className="nav-item" onClick={closeMenu}>
               {item.label}
-              {item.dropdown && <span className="dropdown-arrow">▾</span>}
+              {(hasDropdown(item) || hasTowns(item)) && <span className="dropdown-arrow">▾</span>}
             </Link>
-            {item.dropdown && (
+
+            {hasDropdown(item) && 'dropdown' in item && (
               <div className="dropdown-panel">
                 {item.dropdown.map((sub) => (
                   <Link key={sub.label} to={sub.path} className="dropdown-item" onClick={closeMenu}>
                     {sub.label}
                   </Link>
                 ))}
+              </div>
+            )}
+
+            {hasTowns(item) && 'towns' in item && (
+              <div className="dropdown-panel towns-panel">
+                <div className="towns-heading">Areas We Serve</div>
+                <div className="towns-grid">
+                  {item.towns.map((town) => (
+                    <span key={town} className="town-item">{town}</span>
+                  ))}
+                </div>
               </div>
             )}
           </div>
@@ -147,12 +151,9 @@ export const Header = () => {
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
         {NAV_ITEMS.map((item) => (
           <div key={item.label} className="mobile-nav-group">
-            {item.dropdown ? (
+            {hasDropdown(item) && 'dropdown' in item ? (
               <>
-                <button
-                  className="mobile-nav-button"
-                  onClick={() => toggleMobileDropdown(item.label)}
-                >
+                <button className="mobile-nav-button" onClick={() => toggleMobileDropdown(item.label)}>
                   {item.label}
                   <span className={`mobile-arrow ${mobileExpanded === item.label ? 'open' : ''}`}>▾</span>
                 </button>
@@ -162,6 +163,21 @@ export const Header = () => {
                       <Link key={sub.label} to={sub.path} className="mobile-dropdown-item" onClick={closeMenu}>
                         {sub.label}
                       </Link>
+                    ))}
+                  </div>
+                )}
+              </>
+            ) : hasTowns(item) && 'towns' in item ? (
+              <>
+                <button className="mobile-nav-button" onClick={() => toggleMobileDropdown(item.label)}>
+                  {item.label}
+                  <span className={`mobile-arrow ${mobileExpanded === item.label ? 'open' : ''}`}>▾</span>
+                </button>
+                {mobileExpanded === item.label && (
+                  <div className="mobile-dropdown mobile-towns-dropdown">
+                    <div className="mobile-towns-heading">Areas We Serve</div>
+                    {item.towns.map((town) => (
+                      <span key={town} className="mobile-town-item">{town}</span>
                     ))}
                   </div>
                 )}

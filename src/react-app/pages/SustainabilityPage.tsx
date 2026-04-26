@@ -42,11 +42,11 @@ export const SustainabilityPage = () => {
         .stub-page { background-color: #f9fafb; }
 
         .stub-hero {
-          background: linear-gradient(135deg, #3d1a8a 0%, #1a0a3d 100%);
-          color: white;
+          background: white;
+          border-top: 6px solid #39c318;
+          border-bottom: 1px solid #e5e7eb;
           padding: 80px 60px;
           text-align: center;
-          border-bottom: 4px solid #39c318;
         }
 
         .stub-container { max-width: 1100px; margin: 0 auto; }
@@ -55,6 +55,7 @@ export const SustainabilityPage = () => {
           font-family: 'Poppins', sans-serif;
           font-size: 48px;
           font-weight: 800;
+          color: #1f2937;
           margin-bottom: 16px;
         }
 
@@ -62,7 +63,7 @@ export const SustainabilityPage = () => {
           font-family: 'Poppins', sans-serif;
           font-size: 18px;
           font-weight: 400;
-          opacity: 0.9;
+          color: #4b5563;
         }
 
         .stub-content { padding: 80px 60px; }
