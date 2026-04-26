@@ -3,14 +3,6 @@ import { Link } from 'react-router-dom';
 import { CONTACT_INFO } from '../../constants/contact';
 import './Header.css';
 
-const ALL_TOWNS = [
-  'Albany', 'Amsterdam', 'Ballston Spa', 'Bethlehem', 'Burnt Hills',
-  'Clifton Park', 'Cohoes', 'Colonie', 'Delmar', 'Duanesburg',
-  'East Greenbush', 'Fonda', 'Fulton County', 'Glens Falls', 'Glenville',
-  'Green Island', 'Guilderland', 'Halfmoon', 'Latham', 'Malta',
-  'Mechanicville', 'Niskayuna', 'Rensselaer', 'Saratoga Springs', 'Scotia',
-  'Schenectady', 'Slingerlands', 'Troy', 'Voorheesville', 'Watervliet',
-];
 
 const NAV_ITEMS = [
   {
@@ -53,7 +45,7 @@ const NAV_ITEMS = [
   },
   { label: 'ABOUT US', path: '/about-us' },
   { label: 'CONTACT', path: '/contact' },
-  { label: 'AREAS WE SERVE', path: '/locations', towns: ALL_TOWNS },
+  { label: 'AREAS WE SERVE', path: '/locations' },
 ] as const;
 
 type NavItem = (typeof NAV_ITEMS)[number];
@@ -77,7 +69,6 @@ export const Header = () => {
   };
 
   const hasDropdown = (item: NavItem) => 'dropdown' in item;
-  const hasTowns = (item: NavItem) => 'towns' in item;
 
   return (
     <header className="header">
@@ -133,17 +124,6 @@ export const Header = () => {
                 ))}
               </div>
             )}
-
-            {hasTowns(item) && 'towns' in item && (
-              <div className="dropdown-panel towns-panel">
-                <div className="towns-heading">Areas We Serve</div>
-                <div className="towns-grid">
-                  {item.towns.map((town) => (
-                    <span key={town} className="town-item">{town}</span>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
         ))}
       </nav>
@@ -164,21 +144,6 @@ export const Header = () => {
                       <Link key={sub.label} to={sub.path} className="mobile-dropdown-item" onClick={closeMenu}>
                         {sub.label}
                       </Link>
-                    ))}
-                  </div>
-                )}
-              </>
-            ) : hasTowns(item) && 'towns' in item ? (
-              <>
-                <button className="mobile-nav-button" onClick={() => toggleMobileDropdown(item.label)}>
-                  {item.label}
-                  <span className={`mobile-arrow ${mobileExpanded === item.label ? 'open' : ''}`}>▾</span>
-                </button>
-                {mobileExpanded === item.label && (
-                  <div className="mobile-dropdown mobile-towns-dropdown">
-                    <div className="mobile-towns-heading">Areas We Serve</div>
-                    {item.towns.map((town) => (
-                      <span key={town} className="mobile-town-item">{town}</span>
                     ))}
                   </div>
                 )}
