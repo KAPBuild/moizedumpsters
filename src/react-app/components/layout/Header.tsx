@@ -81,9 +81,15 @@ export const Header = () => {
 
   return (
     <header className="header">
-      {/* Row 1: Logo centered, phone + hamburger on right */}
+      {/* Row 1: Hamburger left | Logo centered | Phone right */}
       <div className="header-top">
-        <div className="header-top-spacer" />
+        <div className="header-top-left">
+          <button className="hamburger-menu" onClick={toggleMenu} aria-label="Toggle menu">
+            <span className={menuOpen ? 'open' : ''}></span>
+            <span className={menuOpen ? 'open' : ''}></span>
+            <span className={menuOpen ? 'open' : ''}></span>
+          </button>
+        </div>
 
         <Link to="/" className="header-logo" onClick={closeMenu}>
           <img
@@ -106,11 +112,6 @@ export const Header = () => {
             </svg>
             <span className="phone-button-text">{CONTACT_INFO.phone}</span>
           </a>
-          <button className="hamburger-menu" onClick={toggleMenu} aria-label="Toggle menu">
-            <span className={menuOpen ? 'open' : ''}></span>
-            <span className={menuOpen ? 'open' : ''}></span>
-            <span className={menuOpen ? 'open' : ''}></span>
-          </button>
         </div>
       </div>
 
