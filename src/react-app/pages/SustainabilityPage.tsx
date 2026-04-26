@@ -17,17 +17,14 @@ export const SustainabilityPage = () => {
         <div className="stub-container">
           <div className="stub-grid">
             <div className="stub-card">
-              <div className="stub-icon">♻️</div>
               <h3>Recycling Programs</h3>
               <p>We sort and divert recyclable materials from landfills whenever possible, reducing environmental impact.</p>
             </div>
             <div className="stub-card">
-              <div className="stub-icon">🌍</div>
               <h3>Eco-Friendly Disposal</h3>
               <p>Responsible disposal practices that comply with all state and local environmental regulations.</p>
             </div>
             <div className="stub-card">
-              <div className="stub-icon">🌱</div>
               <h3>Our Commitment</h3>
               <p>We're dedicated to operating in a way that protects our communities and the environment for future generations.</p>
             </div>
@@ -85,8 +82,6 @@ export const SustainabilityPage = () => {
           border-top: 4px solid #39c318;
           text-align: center;
         }
-
-        .stub-icon { font-size: 48px; margin-bottom: 16px; }
 
         .stub-card h3 {
           font-family: 'Poppins', sans-serif;

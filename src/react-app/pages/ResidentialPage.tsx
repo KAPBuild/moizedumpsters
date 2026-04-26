@@ -17,17 +17,14 @@ export const ResidentialPage = () => {
         <div className="stub-container">
           <div className="stub-grid">
             <div className="stub-card">
-              <div className="stub-icon">🏠</div>
               <h3>Home Cleanouts</h3>
               <p>Clearing out a garage, basement, or full home? We have the right size dumpster for any residential project.</p>
             </div>
             <div className="stub-card">
-              <div className="stub-icon">🔨</div>
               <h3>Renovation Projects</h3>
               <p>Remodeling your kitchen or bathroom? Keep your worksite clean with a conveniently placed roll-off dumpster.</p>
             </div>
             <div className="stub-card">
-              <div className="stub-icon">🌿</div>
               <h3>Yard Waste</h3>
               <p>Landscaping, tree removal, or seasonal cleanups — we make disposal easy and fast.</p>
             </div>
@@ -85,8 +82,6 @@ export const ResidentialPage = () => {
           border-top: 4px solid #39c318;
           text-align: center;
         }
-
-        .stub-icon { font-size: 48px; margin-bottom: 16px; }
 
         .stub-card h3 {
           font-family: 'Poppins', sans-serif;

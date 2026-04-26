@@ -17,22 +17,18 @@ export const BusinessPage = () => {
         <div className="stub-container">
           <div className="stub-grid">
             <div className="stub-card">
-              <div className="stub-icon">🏗️</div>
               <h3>Construction & Demolition</h3>
               <p>Heavy-duty roll-off dumpsters built for job sites — concrete, debris, roofing, and more.</p>
             </div>
             <div className="stub-card">
-              <div className="stub-icon">🏢</div>
               <h3>Property Management</h3>
               <p>Scheduled pickups and flexible rental periods for apartment complexes and commercial properties.</p>
             </div>
             <div className="stub-card">
-              <div className="stub-icon">🏪</div>
               <h3>Small Business</h3>
               <p>Affordable options for retail cleanouts, office moves, and ongoing commercial waste needs.</p>
             </div>
             <div className="stub-card">
-              <div className="stub-icon">🏬</div>
               <h3>Commercial Dumpsters</h3>
               <p>High-capacity dumpsters for large-volume commercial projects with flexible scheduling.</p>
             </div>
@@ -90,8 +86,6 @@ export const BusinessPage = () => {
           border-top: 4px solid #39c318;
           text-align: center;
         }
-
-        .stub-icon { font-size: 48px; margin-bottom: 16px; }
 
         .stub-card h3 {
           font-family: 'Poppins', sans-serif;
