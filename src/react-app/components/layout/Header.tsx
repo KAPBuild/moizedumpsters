@@ -24,16 +24,7 @@ const NAV_ITEMS = [
       { label: 'Small Business', path: '/business/small-business' },
     ],
   },
-  {
-    label: 'SERVICES',
-    path: '/services',
-    dropdown: [
-      { label: 'Roll-Off Dumpsters', path: '/services' },
-      { label: 'Same-Day Delivery', path: '/services/same-day' },
-      { label: 'Recycling', path: '/services/recycling' },
-      { label: 'Accepted Materials', path: '/services/materials' },
-    ],
-  },
+  { label: 'FAQ', path: '/faq' },
   {
     label: 'SUSTAINABILITY',
     path: '/sustainability',
