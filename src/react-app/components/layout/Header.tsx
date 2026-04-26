@@ -112,7 +112,7 @@ export const Header = () => {
           <div key={item.label} className="nav-item-wrapper">
             <Link to={item.path} className="nav-item" onClick={closeMenu}>
               {item.label}
-              {(hasDropdown(item) || hasTowns(item)) && <span className="dropdown-arrow">▾</span>}
+              {hasDropdown(item) && <span className="dropdown-arrow">▾</span>}
             </Link>
 
             {hasDropdown(item) && 'dropdown' in item && (
