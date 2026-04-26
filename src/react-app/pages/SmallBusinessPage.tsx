@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const perks = [
   { title: 'Affordable Flat-Rate Pricing', desc: 'No hidden fees. You get a straightforward quote before we drop anything off.' },
-  { title: 'No Long-Term Contracts', desc: 'Rent for as long as you need — a day, a week, or longer. You're never locked in.' },
-  { title: 'Right-Sized for Smaller Jobs', desc: 'Our 15 yard dumpster is perfect for small businesses that don't need an industrial-scale solution.' },
+  { title: 'No Long-Term Contracts', desc: "Rent for as long as you need — a day, a week, or longer. You're never locked in." },
+  { title: 'Right-Sized for Smaller Jobs', desc: "Our 15 yard dumpster is perfect for small businesses that don't need an industrial-scale solution." },
   { title: 'Quick & Easy Scheduling', desc: 'One phone call is all it takes. We handle the logistics so you can focus on your business.' },
 ];
 
