@@ -77,141 +77,57 @@ export const QuoteForm = () => {
   return (
     <div className="quote-form-container">
       <form onSubmit={handleSubmit} className="quote-form">
-        {/* Name */}
-        <div className="form-group">
-          <label htmlFor="name" className="form-label">
-            Full Name <span className="required">*</span>
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="form-input"
-            placeholder="John Smith"
-          />
+        <div className="form-row">
+          <div className="form-group">
+            <label htmlFor="name" className="form-label">Full Name <span className="required">*</span></label>
+            <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="form-input" placeholder="John Smith" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="phone" className="form-label">Phone Number <span className="required">*</span></label>
+            <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required className="form-input" placeholder="(518) 555-0123" />
+          </div>
         </div>
 
-        {/* Phone */}
-        <div className="form-group">
-          <label htmlFor="phone" className="form-label">
-            Phone Number <span className="required">*</span>
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-            className="form-input"
-            placeholder="(518) 555-0123"
-          />
+        <div className="form-row">
+          <div className="form-group">
+            <label htmlFor="email" className="form-label">Email Address <span className="required">*</span></label>
+            <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required className="form-input" placeholder="john@example.com" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="address" className="form-label">Project Address <span className="required">*</span></label>
+            <input type="text" id="address" name="address" value={formData.address} onChange={handleChange} required className="form-input" placeholder="123 Main St, Albany, NY" />
+          </div>
         </div>
 
-        {/* Email */}
-        <div className="form-group">
-          <label htmlFor="email" className="form-label">
-            Email Address <span className="required">*</span>
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="form-input"
-            placeholder="john@example.com"
-          />
+        <div className="form-row">
+          <div className="form-group">
+            <label htmlFor="serviceType" className="form-label">Service Type <span className="required">*</span></label>
+            <select id="serviceType" name="serviceType" value={formData.serviceType} onChange={handleChange} className="form-select">
+              <option value="dumpster-rental">Dumpster Rental</option>
+              <option value="residential-demolition">Residential Demolition</option>
+              <option value="commercial-demolition">Commercial Demolition</option>
+              <option value="debris-removal">Debris Removal</option>
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="dumpsterSize" className="form-label">Dumpster Size <span className="required">*</span></label>
+            <select id="dumpsterSize" name="dumpsterSize" value={formData.dumpsterSize} onChange={handleChange} className="form-select">
+              <option value="15">15 Yard</option>
+              <option value="20">20 Yard</option>
+              <option value="30">30 Yard</option>
+            </select>
+          </div>
         </div>
 
-        {/* Address */}
         <div className="form-group">
-          <label htmlFor="address" className="form-label">
-            Project Address <span className="required">*</span>
-          </label>
-          <input
-            type="text"
-            id="address"
-            name="address"
-            value={formData.address}
-            onChange={handleChange}
-            required
-            className="form-input"
-            placeholder="123 Main St, Albany, NY 12207"
-          />
+          <label htmlFor="projectDetails" className="form-label">Tell Us About Your Project</label>
+          <textarea id="projectDetails" name="projectDetails" value={formData.projectDetails} onChange={handleChange} className="form-textarea" placeholder="What are you hauling? Any access restrictions? Questions?" />
         </div>
 
-        {/* Service Type */}
-        <div className="form-group">
-          <label htmlFor="serviceType" className="form-label">
-            Service Type <span className="required">*</span>
-          </label>
-          <select
-            id="serviceType"
-            name="serviceType"
-            value={formData.serviceType}
-            onChange={handleChange}
-            className="form-select"
-          >
-            <option value="dumpster-rental">Dumpster Rental</option>
-            <option value="residential-demolition">Residential Demolition</option>
-            <option value="commercial-demolition">Commercial Demolition</option>
-            <option value="debris-removal">Debris Removal</option>
-          </select>
-        </div>
-
-        {/* Dumpster Size */}
-        <div className="form-group">
-          <label htmlFor="dumpsterSize" className="form-label">
-            Dumpster Size <span className="required">*</span>
-          </label>
-          <select
-            id="dumpsterSize"
-            name="dumpsterSize"
-            value={formData.dumpsterSize}
-            onChange={handleChange}
-            className="form-select"
-          >
-            <option value="10">10 Yard</option>
-            <option value="15">15 Yard</option>
-            <option value="20">20 Yard</option>
-            <option value="25">25 Yard</option>
-            <option value="30">30 Yard</option>
-            <option value="40">40 Yard</option>
-          </select>
-        </div>
-
-        {/* Project Details */}
-        <div className="form-group">
-          <label htmlFor="projectDetails" className="form-label">
-            Project Details
-          </label>
-          <textarea
-            id="projectDetails"
-            name="projectDetails"
-            value={formData.projectDetails}
-            onChange={handleChange}
-            className="form-textarea"
-            placeholder="Tell us more about your project..."
-          />
-        </div>
-
-        {/* Submit Button */}
-        <button
-          type="submit"
-          disabled={loading}
-          className="form-submit"
-        >
+        <button type="submit" disabled={loading} className="form-submit">
           {loading ? 'Submitting...' : 'Get My Free Quote'}
         </button>
-
-        <p className="form-helper-text">
-          We'll contact you within 24 hours with your free quote.
-        </p>
+        <p className="form-helper-text">We'll get back to you fast — usually the same day.</p>
       </form>
     </div>
   );

@@ -112,13 +112,14 @@ export const ResidentialPage = () => {
           font-family: 'Poppins', sans-serif;
           font-size: 36px;
           font-weight: 800;
+          color: white;
           margin-bottom: 12px;
         }
 
         .stub-cta p {
           font-family: 'Poppins', sans-serif;
           font-size: 16px;
-          opacity: 0.85;
+          color: rgba(255,255,255,0.85);
           margin-bottom: 32px;
         }
 
