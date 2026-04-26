@@ -1,45 +1,52 @@
 import { useState } from 'react';
 
-export const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    message: '',
-  });
+const inputStyle: React.CSSProperties = {
+  width: '100%',
+  padding: '12px 16px',
+  border: '2px solid #e5e7eb',
+  borderRadius: 8,
+  fontFamily: "'Poppins', sans-serif",
+  fontSize: 15,
+  color: '#1f2937',
+  outline: 'none',
+  boxSizing: 'border-box',
+  transition: 'border-color 0.2s',
+};
 
+const labelStyle: React.CSSProperties = {
+  display: 'block',
+  fontFamily: "'Poppins', sans-serif",
+  fontSize: 12,
+  fontWeight: 700,
+  color: '#1f2937',
+  textTransform: 'uppercase',
+  letterSpacing: '0.5px',
+  marginBottom: 8,
+};
+
+export const ContactForm = () => {
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [focused, setFocused] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-
       if (response.ok) {
         setSubmitted(true);
-        setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          message: '',
-        });
+        setFormData({ name: '', phone: '', email: '', message: '' });
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     } catch (error) {
@@ -51,14 +58,53 @@ export const ContactForm = () => {
 
   if (submitted) {
     return (
-      <div className="bg-accent/10 border-2 border-accent rounded-lg p-8 text-center max-w-2xl mx-auto">
-        <h2 className="text-3xl font-bold text-neutral-900 mb-4">Message Sent Successfully!</h2>
-        <p className="text-lg text-neutral-600 mb-6">
-          Thank you for contacting us. We'll get back to you as soon as possible.
+      <div style={{ textAlign: 'center', padding: '40px 0' }}>
+        <div style={{
+          width: 64,
+          height: 64,
+          borderRadius: '50%',
+          backgroundColor: '#39c318',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          margin: '0 auto 24px',
+        }}>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </div>
+        <h3 style={{
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: 24,
+          fontWeight: 800,
+          color: '#1f2937',
+          marginBottom: 12,
+        }}>
+          Message Sent!
+        </h3>
+        <p style={{
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: 15,
+          color: '#4b5563',
+          marginBottom: 32,
+        }}>
+          We'll get back to you as soon as possible.
         </p>
         <button
           onClick={() => setSubmitted(false)}
-          className="bg-primary text-white font-bold py-3 px-8 rounded-lg hover:opacity-90 transition-opacity"
+          style={{
+            backgroundColor: '#3d1a8a',
+            color: 'white',
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: 14,
+            fontWeight: 700,
+            padding: '12px 32px',
+            borderRadius: 25,
+            border: 'none',
+            cursor: 'pointer',
+            textTransform: 'uppercase',
+            letterSpacing: '0.5px',
+          }}
         >
           Send Another Message
         </button>
@@ -66,81 +112,79 @@ export const ContactForm = () => {
     );
   }
 
+  const fields = [
+    { id: 'name', label: 'Full Name', type: 'text', placeholder: 'John Smith' },
+    { id: 'phone', label: 'Phone Number', type: 'tel', placeholder: '(518) 555-0123' },
+    { id: 'email', label: 'Email Address', type: 'email', placeholder: 'john@example.com' },
+  ];
+
   return (
-    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
-      {/* Name */}
-      <div>
-        <label htmlFor="name" className="block text-sm font-bold text-neutral-900 mb-2">
-          Full Name <span className="text-accent">*</span>
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-          placeholder="John Smith"
-        />
-      </div>
+    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+      {fields.map(({ id, label, type, placeholder }) => (
+        <div key={id}>
+          <label htmlFor={id} style={labelStyle}>
+            {label} <span style={{ color: '#39c318' }}>*</span>
+          </label>
+          <input
+            type={type}
+            id={id}
+            name={id}
+            value={formData[id as keyof typeof formData]}
+            onChange={handleChange}
+            onFocus={() => setFocused(id)}
+            onBlur={() => setFocused(null)}
+            required
+            placeholder={placeholder}
+            style={{
+              ...inputStyle,
+              borderColor: focused === id ? '#3d1a8a' : '#e5e7eb',
+              boxShadow: focused === id ? '0 0 0 3px rgba(61,26,138,0.1)' : 'none',
+            }}
+          />
+        </div>
+      ))}
 
-      {/* Phone */}
       <div>
-        <label htmlFor="phone" className="block text-sm font-bold text-neutral-900 mb-2">
-          Phone Number <span className="text-accent">*</span>
-        </label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-          placeholder="(518) 555-0123"
-        />
-      </div>
-
-      {/* Email */}
-      <div>
-        <label htmlFor="email" className="block text-sm font-bold text-neutral-900 mb-2">
-          Email Address <span className="text-accent">*</span>
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-          placeholder="john@example.com"
-        />
-      </div>
-
-      {/* Message */}
-      <div>
-        <label htmlFor="message" className="block text-sm font-bold text-neutral-900 mb-2">
-          Message <span className="text-accent">*</span>
+        <label htmlFor="message" style={labelStyle}>
+          Message <span style={{ color: '#39c318' }}>*</span>
         </label>
         <textarea
           id="message"
           name="message"
           value={formData.message}
           onChange={handleChange}
+          onFocus={() => setFocused('message')}
+          onBlur={() => setFocused(null)}
           required
           rows={5}
-          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-          placeholder="Tell us how we can help..."
+          placeholder="Tell us about your project..."
+          style={{
+            ...inputStyle,
+            resize: 'vertical',
+            borderColor: focused === 'message' ? '#3d1a8a' : '#e5e7eb',
+            boxShadow: focused === 'message' ? '0 0 0 3px rgba(61,26,138,0.1)' : 'none',
+          }}
         />
       </div>
 
-      {/* Submit Button */}
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-accent text-white font-bold py-4 px-8 rounded-lg text-lg hover:opacity-90 transition-opacity disabled:opacity-50"
+        style={{
+          backgroundColor: loading ? '#9ca3af' : '#39c318',
+          color: 'white',
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: 15,
+          fontWeight: 700,
+          padding: '16px 32px',
+          borderRadius: 25,
+          border: 'none',
+          cursor: loading ? 'not-allowed' : 'pointer',
+          textTransform: 'uppercase',
+          letterSpacing: '0.5px',
+          transition: 'background-color 0.2s, transform 0.2s',
+          width: '100%',
+        }}
       >
         {loading ? 'Sending...' : 'Send Message'}
       </button>
