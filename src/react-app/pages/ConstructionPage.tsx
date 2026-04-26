@@ -5,7 +5,7 @@ const features = [
   { title: 'Heavy Debris Ready', desc: 'Our roll-off dumpsters are built for concrete, roofing shingles, drywall, lumber, and everything that comes off a job site.' },
   { title: 'Flexible Scheduling', desc: 'We work around your project timeline. Need a swap mid-job? Just call us — we make it easy.' },
   { title: 'Right-Size Options', desc: 'We offer 15, 20, and 30 yard dumpsters so you get exactly what you need without paying for more than you use.' },
-  { title: 'Fast Turnaround', desc: 'We deliver on time and pick up when you're done, keeping your site clean and your project on schedule.' },
+  { title: 'Fast Turnaround', desc: "We deliver on time and pick up when you're done, keeping your site clean and your project on schedule." },
 ];
 
 const accepted = ['Concrete & masonry', 'Wood & lumber', 'Drywall & plaster', 'Roofing shingles', 'Metal scraps', 'Flooring & tile', 'Insulation', 'Fencing & decking'];

@@ -4,7 +4,7 @@ import { CONTACT_INFO } from '../constants/contact';
 
 const steps = [
   { num: '1', title: 'Call Us Early', desc: 'Get in touch with our team by mid-morning and let us know what you need and where.' },
-  { num: '2', title: 'We Confirm Availability', desc: 'We'll check same-day availability in your area and get you a quick quote on the spot.' },
+  { num: '2', title: 'We Confirm Availability', desc: "We'll check same-day availability in your area and get you a quick quote on the spot." },
   { num: '3', title: 'We Deliver', desc: 'Your dumpster arrives the same day, dropped exactly where you need it.' },
 ];
 
