@@ -117,10 +117,20 @@ export const Header = () => {
             )}
           </div>
         ))}
+        <div className="nav-item-wrapper nav-book-wrapper">
+          <Link to="/reserve" className="nav-item nav-item-book" onClick={closeMenu}>
+            BOOK ONLINE
+          </Link>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+        <div className="mobile-nav-group">
+          <Link to="/reserve" className="mobile-nav-link mobile-nav-link-book" onClick={closeMenu}>
+            BOOK ONLINE
+          </Link>
+        </div>
         {NAV_ITEMS.map((item) => (
           <div key={item.label} className="mobile-nav-group">
             {hasDropdown(item) && 'dropdown' in item ? (

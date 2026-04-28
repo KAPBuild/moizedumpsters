@@ -18,6 +18,8 @@ import { RecyclingServicePage } from './pages/RecyclingServicePage';
 import { AcceptedMaterialsPage } from './pages/AcceptedMaterialsPage';
 import { LocationsPage } from './pages/LocationsPage';
 import { SustainabilityPage } from './pages/SustainabilityPage';
+import { ReservePage } from './pages/ReservePage';
+import { ReserveSuccessPage } from './pages/ReserveSuccessPage';
 
 function App() {
   return (
@@ -49,6 +51,10 @@ function App() {
           {/* Sustainability */}
           <Route path="sustainability" element={<SustainabilityPage />} />
           <Route path="sustainability/recycling" element={<RecyclingServicePage />} />
+
+          {/* Reserve / Book Online */}
+          <Route path="reserve" element={<ReservePage />} />
+          <Route path="reserve/success" element={<ReserveSuccessPage />} />
 
           {/* Existing */}
           <Route path="about-us" element={<AboutPage />} />

@@ -181,6 +181,30 @@
   background-color: #f9fafb;
 }
 
+.nav-book-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.nav-item-book {
+  background-color: #39c318 !important;
+  color: white !important;
+  border-radius: 6px;
+  padding: 8px 18px !important;
+  font-weight: 800 !important;
+}
+
+.nav-item-book:hover {
+  background-color: #2da614 !important;
+  color: white !important;
+}
+
+.mobile-nav-link-book {
+  color: #39c318 !important;
+  font-weight: 800 !important;
+}
+
 .dropdown-arrow {
   font-size: 11px;
   line-height: 1;

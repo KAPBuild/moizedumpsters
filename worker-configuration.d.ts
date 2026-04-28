@@ -7,6 +7,8 @@ declare namespace Cloudflare {
 	}
 	interface Env {
 		RESEND_API_KEY?: string;
+		STRIPE_SECRET_KEY?: string;
+		STRIPE_WEBHOOK_SECRET?: string;
 	}
 }
 interface Env extends Cloudflare.Env {}
