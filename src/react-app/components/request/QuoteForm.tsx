@@ -6,7 +6,10 @@ export const QuoteForm = () => {
     name: '',
     phone: '',
     email: '',
-    address: '',
+    streetAddress: '',
+    city: '',
+    state: '',
+    zip: '',
     serviceType: 'dumpster-rental',
     dumpsterSize: '20',
     projectDetails: '',
@@ -25,6 +28,8 @@ export const QuoteForm = () => {
       else if (d.length <= 6) formatted = `(${d.slice(0, 3)}) ${d.slice(3)}`;
       else formatted = `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}`;
     }
+    if (name === 'state') formatted = value.replace(/[^a-zA-Z]/g, '').slice(0, 2).toUpperCase();
+    if (name === 'zip') formatted = value.replace(/\D/g, '').slice(0, 5);
     setFormData((prev) => ({ ...prev, [name]: formatted }));
   };
 
@@ -38,7 +43,10 @@ export const QuoteForm = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          address: `${formData.streetAddress}, ${formData.city}, ${formData.state} ${formData.zip}`,
+        }),
       });
 
       if (response.ok) {
@@ -47,7 +55,10 @@ export const QuoteForm = () => {
           name: '',
           phone: '',
           email: '',
-          address: '',
+          streetAddress: '',
+          city: '',
+          state: '',
+          zip: '',
           serviceType: 'dumpster-rental',
           dumpsterSize: '20',
           projectDetails: '',
@@ -67,10 +78,7 @@ export const QuoteForm = () => {
       <div className="quote-success">
         <h2>Quote Request Submitted!</h2>
         <p>
-          Thank you for your submission. We'll review your request and contact you within 24 hours with a free quote.
-        </p>
-        <p>
-          Expected contact method: <strong>{formData.phone}</strong>
+          Thank you for your submission. We'll review your request and reach out within 24 hours with a free quote.
         </p>
         <button onClick={() => setSubmitted(false)}>
           Submit Another Quote
@@ -99,8 +107,23 @@ export const QuoteForm = () => {
             <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required className="form-input" placeholder="john@example.com" />
           </div>
           <div className="form-group">
-            <label htmlFor="address" className="form-label">Project Address <span className="required">*</span></label>
-            <input type="text" id="address" name="address" value={formData.address} onChange={handleChange} required className="form-input" placeholder="123 Main St, Albany, NY" />
+            <label htmlFor="streetAddress" className="form-label">Street Address <span className="required">*</span></label>
+            <input type="text" id="streetAddress" name="streetAddress" value={formData.streetAddress} onChange={handleChange} required className="form-input" placeholder="123 Main St" />
+          </div>
+        </div>
+
+        <div className="form-row" style={{ gridTemplateColumns: '2fr 1fr 1fr' }}>
+          <div className="form-group">
+            <label htmlFor="city" className="form-label">City <span className="required">*</span></label>
+            <input type="text" id="city" name="city" value={formData.city} onChange={handleChange} required className="form-input" placeholder="Wayne" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="state" className="form-label">State <span className="required">*</span></label>
+            <input type="text" id="state" name="state" value={formData.state} onChange={handleChange} required className="form-input" placeholder="NJ" maxLength={2} />
+          </div>
+          <div className="form-group">
+            <label htmlFor="zip" className="form-label">ZIP Code <span className="required">*</span></label>
+            <input type="text" id="zip" name="zip" value={formData.zip} onChange={handleChange} required className="form-input" placeholder="07470" inputMode="numeric" maxLength={5} />
           </div>
         </div>
 

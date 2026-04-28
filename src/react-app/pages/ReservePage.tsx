@@ -43,7 +43,10 @@ export const ReservePage = () => {
     name: '',
     email: '',
     phone: '',
-    address: '',
+    streetAddress: '',
+    city: '',
+    state: '',
+    zip: '',
     startDate: '',
     notes: '',
   });
@@ -62,6 +65,8 @@ export const ReservePage = () => {
     let value = e.target.value;
     if (field === 'name') value = formatName(value);
     if (field === 'phone') value = formatPhone(value);
+    if (field === 'state') value = value.replace(/[^a-zA-Z]/g, '').slice(0, 2).toUpperCase();
+    if (field === 'zip') value = value.replace(/\D/g, '').slice(0, 5);
     setForm(prev => ({ ...prev, [field]: value }));
   };
 
@@ -75,6 +80,7 @@ export const ReservePage = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...form,
+          address: `${form.streetAddress}, ${form.city}, ${form.state} ${form.zip}`,
           returnUrl: `${window.location.origin}/reserve/success?session_id={CHECKOUT_SESSION_ID}`,
         }),
       });
@@ -233,12 +239,42 @@ export const ReservePage = () => {
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                   <label style={{ fontFamily: "'Poppins', sans-serif", fontSize: 12, fontWeight: 700, color: '#1f2937', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                    Delivery Address <span style={{ color: '#39c318' }}>*</span>
+                    Street Address <span style={{ color: '#39c318' }}>*</span>
                   </label>
                   <input
-                    type="text" required value={form.address} onChange={setField('address')} placeholder="123 Main St, Wayne, NJ 07470"
+                    type="text" required value={form.streetAddress} onChange={setField('streetAddress')} placeholder="123 Main St"
                     style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, color: '#1f2937', border: '2px solid #e5e7eb', borderRadius: 8, padding: '12px 16px', background: 'white', width: '100%', boxSizing: 'border-box' }}
                   />
+                </div>
+
+                <div className="reserve-three-col" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: 16 }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                    <label style={{ fontFamily: "'Poppins', sans-serif", fontSize: 12, fontWeight: 700, color: '#1f2937', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                      City <span style={{ color: '#39c318' }}>*</span>
+                    </label>
+                    <input
+                      type="text" required value={form.city} onChange={setField('city')} placeholder="Wayne"
+                      style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, color: '#1f2937', border: '2px solid #e5e7eb', borderRadius: 8, padding: '12px 16px', background: 'white', width: '100%', boxSizing: 'border-box' }}
+                    />
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                    <label style={{ fontFamily: "'Poppins', sans-serif", fontSize: 12, fontWeight: 700, color: '#1f2937', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                      State <span style={{ color: '#39c318' }}>*</span>
+                    </label>
+                    <input
+                      type="text" required value={form.state} onChange={setField('state')} placeholder="NJ" maxLength={2}
+                      style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, color: '#1f2937', border: '2px solid #e5e7eb', borderRadius: 8, padding: '12px 16px', background: 'white', width: '100%', boxSizing: 'border-box' }}
+                    />
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                    <label style={{ fontFamily: "'Poppins', sans-serif", fontSize: 12, fontWeight: 700, color: '#1f2937', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                      ZIP Code <span style={{ color: '#39c318' }}>*</span>
+                    </label>
+                    <input
+                      type="text" required value={form.zip} onChange={setField('zip')} placeholder="07470" inputMode="numeric" maxLength={5}
+                      style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, color: '#1f2937', border: '2px solid #e5e7eb', borderRadius: 8, padding: '12px 16px', background: 'white', width: '100%', boxSizing: 'border-box' }}
+                    />
+                  </div>
                 </div>
 
                 <div className="reserve-two-col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
@@ -326,7 +362,7 @@ export const ReservePage = () => {
                   {selected.yards} Yard Dumpster · {form.name}
                 </div>
                 <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, color: '#6b7280', marginTop: 2 }}>
-                  Delivery to: {form.address}
+                  Delivery to: {form.streetAddress}, {form.city}, {form.state} {form.zip}
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
@@ -354,6 +390,7 @@ export const ReservePage = () => {
           section{padding:40px 20px!important}
           h1{font-size:32px!important}
           .reserve-two-col{grid-template-columns:1fr!important}
+          .reserve-three-col{grid-template-columns:1fr 1fr!important}
         }
         input:focus{outline:none;border-color:#3d1a8a!important;box-shadow:0 0 0 3px rgba(61,26,138,0.1)!important}
       `}</style>
