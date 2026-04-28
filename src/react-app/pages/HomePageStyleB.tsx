@@ -10,7 +10,15 @@ export const HomePageStyleB = () => {
 
   const handleContactChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setContactForm((prev) => ({ ...prev, [name]: value }));
+    let formatted = value;
+    if (name === 'name') formatted = value.replace(/[^a-zA-Z\s'\-]/g, '');
+    if (name === 'phone') {
+      const d = value.replace(/\D/g, '').slice(0, 10);
+      if (d.length <= 3) formatted = d;
+      else if (d.length <= 6) formatted = `(${d.slice(0, 3)}) ${d.slice(3)}`;
+      else formatted = `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}`;
+    }
+    setContactForm((prev) => ({ ...prev, [name]: formatted }));
   };
 
   const handleContactSubmit = async (e: React.FormEvent) => {

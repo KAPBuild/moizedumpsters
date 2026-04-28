@@ -50,8 +50,20 @@ export const ReservePage = () => {
 
   const selected = SIZES.find(s => s.yards === form.size)!;
 
-  const setField = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-    setForm(prev => ({ ...prev, [field]: e.target.value }));
+  const formatName = (v: string) => v.replace(/[^a-zA-Z\s'\-]/g, '');
+  const formatPhone = (v: string) => {
+    const d = v.replace(/\D/g, '').slice(0, 10);
+    if (d.length <= 3) return d;
+    if (d.length <= 6) return `(${d.slice(0, 3)}) ${d.slice(3)}`;
+    return `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}`;
+  };
+
+  const setField = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    let value = e.target.value;
+    if (field === 'name') value = formatName(value);
+    if (field === 'phone') value = formatPhone(value);
+    setForm(prev => ({ ...prev, [field]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
