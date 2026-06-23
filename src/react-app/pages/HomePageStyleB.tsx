@@ -320,6 +320,14 @@ export const HomePageStyleB = () => {
               </div>
             ))}
           </div>
+
+          <div className="sb-sizes-also">
+            <div className="sb-sizes-also-text">
+              <strong>Need a smaller dumpster?</strong>
+              <span>8, 10, 12 &amp; 14 yard sizes are also available — get a quote and we'll find the right fit for your project.</span>
+            </div>
+            <Link to="/request" className="sb-btn-primary sb-sizes-also-btn">Get A Free Quote</Link>
+          </div>
         </div>
       </section>
 
