@@ -190,9 +190,6 @@ export const HomePageStyleB = () => {
               </div>
             </div>
           </div>
-          <div className="sb-hero-mobile-truck">
-            <img src="/images/truck-tall.png" alt="Moize Dumpsters Truck" />
-          </div>
         </div>
       </section>
 
