@@ -1036,7 +1036,7 @@ a.sb-contact-detail-item:hover {
     background-color: #0d0d1a;
     min-height: 100svh;
     align-items: flex-start;
-    padding: 40px 0 48px;
+    padding: 16px 0 48px;
   }
 
   .sb-hero-inner {
