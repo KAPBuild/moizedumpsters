@@ -222,7 +222,7 @@ export const HomePageStyleB = () => {
 
       {/* TRUST BAR */}
       <div className="sb-trust-bar">
-        {['500+ Projects Completed', 'Flat-Rate Pricing', 'No Hidden Fees', 'On-Time Every Time'].map((t) => (
+        {['1,200+ Projects Completed', 'Flat-Rate Pricing', 'No Hidden Fees', 'On-Time Every Time'].map((t) => (
           <div key={t} className="sb-trust-item">
             <span className="sb-trust-check">✓</span> {t}
           </div>
@@ -241,7 +241,7 @@ export const HomePageStyleB = () => {
           </div>
           <div className="sb-mission-stats">
             <div className="sb-mstat">
-              <div className="sb-mstat-val">500+</div>
+              <div className="sb-mstat-val">1,200+</div>
               <div className="sb-mstat-label">Jobs Completed</div>
             </div>
             <div className="sb-mstat">
