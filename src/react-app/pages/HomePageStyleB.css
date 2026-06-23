@@ -1041,7 +1041,7 @@ a.sb-contact-detail-item:hover {
     background-image: linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.42)), url('/images/truck-tall.jpg');
     background-size: cover;
     background-position: center top;
-    background-attachment: scroll;
+    background-attachment: fixed;
     background-color: #0d0d1a;
     min-height: 100svh;
     align-items: flex-start;
@@ -1092,6 +1092,13 @@ a.sb-contact-detail-item:hover {
 
   .sb-btn-text:hover {
     color: #c4b5fd;
+  }
+}
+
+/* iOS Safari: background-attachment: fixed is broken, fall back to scroll */
+@supports (-webkit-touch-callout: none) {
+  .sb-hero {
+    background-attachment: scroll;
   }
 }
 
