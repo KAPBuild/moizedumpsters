@@ -19,9 +19,15 @@ export const HomePageStyleB = () => {
 
     hero.style.backgroundAttachment = 'scroll';
 
+    let ticking = false;
     const update = () => {
-      const top = hero.getBoundingClientRect().top;
-      hero.style.backgroundPosition = `50% ${-top}px`;
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const top = hero.getBoundingClientRect().top;
+        hero.style.backgroundPosition = `50% ${-top}px`;
+        ticking = false;
+      });
     };
 
     update();
