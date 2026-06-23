@@ -1041,7 +1041,7 @@ a.sb-contact-detail-item:hover {
     background-image: linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.42)), url('/images/truck-tall.jpg');
     background-size: cover;
     background-position: center top;
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-color: #0d0d1a;
     min-height: 100svh;
     align-items: flex-start;
