@@ -197,15 +197,35 @@
 /* RESPONSIVE - MOBILE */
 @media (max-width: 768px) {
   .hero {
-    height: auto;
+    height: 100svh;
     min-height: 600px;
     padding: 60px 0 40px;
   }
 
+  .hero-background {
+    background-image: url('/images/truck-tall.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-color: transparent;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.55) 100%);
+  }
+
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 0;
     padding: 0 20px;
+  }
+
+  .hero-right {
+    display: none;
+  }
+
+  .hero-left {
+    gap: 28px;
   }
 
   .hero-logo-img {
@@ -240,19 +260,11 @@
     width: 16px;
     height: 16px;
   }
-
-  .dumpster-image {
-    max-width: 280px;
-  }
-
-  .hero-left {
-    gap: 30px;
-  }
 }
 
 @media (max-width: 640px) {
   .hero {
-    min-height: 500px;
+    min-height: 600px;
   }
 
   .hero-title {
@@ -261,9 +273,5 @@
 
   .benefit-text {
     font-size: 14px;
-  }
-
-  .dumpster-image {
-    max-width: 200px;
   }
 }

@@ -977,9 +977,56 @@ a.sb-contact-detail-item:hover {
   .sb-contact-form-wrap { padding: 32px; }
 }
 
+@media (max-width: 768px) {
+  .sb-hero {
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url('/images/truck-tall.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    min-height: 100svh;
+    padding: 80px 0 60px;
+  }
+
+  .sb-hero-image {
+    display: none;
+  }
+
+  .sb-hero-inner {
+    grid-template-columns: 1fr;
+    padding: 0 24px;
+  }
+
+  .sb-hero-title {
+    color: #ffffff;
+    font-size: 36px;
+  }
+
+  .sb-hero-highlight {
+    color: #c4b5fd;
+  }
+
+  .sb-hero-sub {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .sb-pill {
+    background-color: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    backdrop-filter: blur(6px);
+  }
+
+  .sb-btn-text {
+    color: #ffffff;
+  }
+
+  .sb-btn-text:hover {
+    color: #c4b5fd;
+  }
+}
+
 @media (max-width: 640px) {
   .sb-hero-inner { padding: 40px 20px; }
-  .sb-hero-title { font-size: 32px; }
+  .sb-hero-title { font-size: 30px; }
   .sb-section-inner { padding: 50px 20px; }
   .sb-section-title { font-size: 28px; }
   .sb-trust-bar { display: none; }
