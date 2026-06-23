@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { CONTACT_INFO } from '../constants/contact';
 import './HomePageStyleB.css';
@@ -7,6 +7,27 @@ export const HomePageStyleB = () => {
   const [contactForm, setContactForm] = useState({ name: '', phone: '', email: '', message: '' });
   const [contactSubmitted, setContactSubmitted] = useState(false);
   const [contactLoading, setContactLoading] = useState(false);
+  const heroRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    if (!isIOS) return;
+
+    const hero = heroRef.current;
+    if (!hero) return;
+
+    hero.style.backgroundAttachment = 'scroll';
+
+    const update = () => {
+      const top = hero.getBoundingClientRect().top;
+      hero.style.backgroundPosition = `50% ${-top}px`;
+    };
+
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    return () => window.removeEventListener('scroll', update);
+  }, []);
 
   const handleContactChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -153,7 +174,7 @@ export const HomePageStyleB = () => {
     <div className="sb-page">
 
       {/* HERO */}
-      <section className="sb-hero">
+      <section className="sb-hero" ref={heroRef}>
         <div className="sb-hero-inner">
           <div className="sb-hero-content">
             <div className="sb-hero-pills">
