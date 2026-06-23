@@ -1101,7 +1101,7 @@ a.sb-contact-detail-item:hover {
   .sb-section-inner { padding: 50px 20px; }
   .sb-section-title { font-size: 28px; }
   .sb-trust-bar { display: none; }
-  .sb-sizes-grid { grid-template-columns: 1fr 1fr; }
+  .sb-sizes-grid { grid-template-columns: 1fr; }
   .sb-cta { padding: 60px 20px; }
   .sb-cta-title { font-size: 30px; }
   .sb-form-row { grid-template-columns: 1fr; }
