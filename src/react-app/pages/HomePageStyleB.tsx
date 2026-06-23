@@ -245,13 +245,50 @@ export const HomePageStyleB = () => {
               <div className="sb-mstat-label">Jobs Completed</div>
             </div>
             <div className="sb-mstat">
-              <div className="sb-mstat-val">3</div>
-              <div className="sb-mstat-label">Container Sizes</div>
+              <div className="sb-mstat-val">25+</div>
+              <div className="sb-mstat-label">Years Experience</div>
             </div>
             <div className="sb-mstat">
               <div className="sb-mstat-val">100%</div>
               <div className="sb-mstat-label">Licensed Disposal</div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* DUMPSTER SIZES */}
+      <section className="sb-sizes">
+        <div className="sb-section-inner">
+          <div className="sb-section-header">
+            <span className="sb-tag">OUR INVENTORY</span>
+            <h2 className="sb-section-title">Find The Right Size</h2>
+            <p className="sb-section-sub">Not sure what you need? Call us — we'll walk you through it based on your project.</p>
+          </div>
+          <div className="sb-sizes-grid">
+            {sizes.map((d) => (
+              <div key={d.size} className="sb-size-card">
+                <div className="sb-size-img-wrap">
+                  <img src={d.img} alt={d.size} className="sb-size-img" />
+                  <div className="sb-size-tag-wrap">
+                    <span className="sb-size-tag" style={{ backgroundColor: d.color }}>{d.tag}</span>
+                  </div>
+                </div>
+                <div className="sb-size-info">
+                  <h3 className="sb-size-title">{d.size} Dumpster</h3>
+                  <p className="sb-size-dims">{d.dims}</p>
+                  <p className="sb-size-fits">{d.fits} · <strong>Best for:</strong> {d.best}</p>
+                  <Link to="/request" className="sb-btn-primary sb-size-btn">Book Now</Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="sb-sizes-also">
+            <div className="sb-sizes-also-text">
+              <strong>Need a smaller dumpster?</strong>
+              <span>8, 10, 12 &amp; 14 yard sizes are also available — get a quote and we'll find the right fit for your project.</span>
+            </div>
+            <Link to="/request" className="sb-btn-primary sb-sizes-also-btn">Get A Free Quote</Link>
           </div>
         </div>
       </section>
@@ -317,43 +354,6 @@ export const HomePageStyleB = () => {
                 <Link to="/request" className="sb-service-link">Book Now →</Link>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* DUMPSTER SIZES */}
-      <section className="sb-sizes">
-        <div className="sb-section-inner">
-          <div className="sb-section-header">
-            <span className="sb-tag">OUR INVENTORY</span>
-            <h2 className="sb-section-title">Find The Right Size</h2>
-            <p className="sb-section-sub">Not sure what you need? Call us — we'll walk you through it based on your project.</p>
-          </div>
-          <div className="sb-sizes-grid">
-            {sizes.map((d) => (
-              <div key={d.size} className="sb-size-card">
-                <div className="sb-size-img-wrap">
-                  <img src={d.img} alt={d.size} className="sb-size-img" />
-                  <div className="sb-size-tag-wrap">
-                    <span className="sb-size-tag" style={{ backgroundColor: d.color }}>{d.tag}</span>
-                  </div>
-                </div>
-                <div className="sb-size-info">
-                  <h3 className="sb-size-title">{d.size} Dumpster</h3>
-                  <p className="sb-size-dims">{d.dims}</p>
-                  <p className="sb-size-fits">{d.fits} · <strong>Best for:</strong> {d.best}</p>
-                  <Link to="/request" className="sb-btn-primary sb-size-btn">Book Now</Link>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="sb-sizes-also">
-            <div className="sb-sizes-also-text">
-              <strong>Need a smaller dumpster?</strong>
-              <span>8, 10, 12 &amp; 14 yard sizes are also available — get a quote and we'll find the right fit for your project.</span>
-            </div>
-            <Link to="/request" className="sb-btn-primary sb-sizes-also-btn">Get A Free Quote</Link>
           </div>
         </div>
       </section>

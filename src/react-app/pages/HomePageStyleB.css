@@ -244,12 +244,12 @@
 .sb-section-inner {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 90px 60px;
+  padding: 60px 60px;
 }
 
 .sb-section-header {
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 36px;
 }
 
 .sb-tag {
@@ -549,7 +549,7 @@
 /* CTA */
 .sb-cta {
   background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
-  padding: 90px 40px;
+  padding: 60px 40px;
   text-align: center;
 }
 
@@ -652,7 +652,7 @@
 /* MISSION */
 .sb-mission {
   background-color: #f8fafc;
-  padding: 80px 60px;
+  padding: 52px 60px;
 }
 
 .sb-mission-inner {
@@ -1029,10 +1029,10 @@ a.sb-contact-detail-item:hover {
   .sb-hero-title { font-size: 42px; }
   .sb-steps { grid-template-columns: 1fr; }
   .sb-services-grid { grid-template-columns: 1fr; }
-  .sb-section-inner { padding: 70px 40px; }
+  .sb-section-inner { padding: 48px 40px; }
   .sb-sizes-grid { grid-template-columns: repeat(2, 1fr); }
   .sb-mission-inner { grid-template-columns: 1fr; gap: 40px; }
-  .sb-mission { padding: 60px 40px; }
+  .sb-mission { padding: 40px 40px; }
   .sb-materials-grid { grid-template-columns: 1fr; }
   .sb-reviews-grid { grid-template-columns: 1fr; }
   .sb-contact-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -1133,11 +1133,11 @@ a.sb-contact-detail-item:hover {
 @media (max-width: 640px) {
   .sb-hero-inner { padding: 40px 20px; }
   .sb-hero-title { font-size: 30px; }
-  .sb-section-inner { padding: 50px 20px; }
+  .sb-section-inner { padding: 36px 20px; }
   .sb-section-title { font-size: 28px; }
   .sb-trust-bar { display: none; }
   .sb-sizes-grid { grid-template-columns: 1fr; }
-  .sb-cta { padding: 60px 20px; }
+  .sb-cta { padding: 44px 20px; }
   .sb-cta-title { font-size: 30px; }
   .sb-form-row { grid-template-columns: 1fr; }
   .sb-contact-form-wrap { padding: 24px 20px; }
