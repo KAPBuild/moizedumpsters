@@ -1039,6 +1039,10 @@ a.sb-contact-detail-item:hover {
   .sb-contact-form-wrap { padding: 32px; }
 }
 
+.sb-hero-parallax-bg {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .sb-hero {
     background-image: linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.42)), url('/images/truck-tall.jpg');
@@ -1049,6 +1053,8 @@ a.sb-contact-detail-item:hover {
     min-height: 100svh;
     align-items: flex-start;
     padding: 0 0 48px;
+    position: relative;
+    overflow: hidden;
   }
 
   .sb-hero-inner {
@@ -1060,6 +1066,22 @@ a.sb-contact-detail-item:hover {
 
   .sb-hero-image {
     display: none;
+  }
+
+  .sb-hero-parallax-bg {
+    display: block;
+    position: absolute;
+    inset: -30% 0;
+    background-image: linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.42)), url('/images/truck-tall.jpg');
+    background-size: cover;
+    background-position: center top;
+    will-change: transform;
+    z-index: 0;
+  }
+
+  .sb-hero-inner {
+    position: relative;
+    z-index: 1;
   }
 
   .sb-hero-content {
@@ -1098,10 +1120,13 @@ a.sb-contact-detail-item:hover {
   }
 }
 
-/* iOS Safari: background-attachment: fixed is broken, fall back to scroll */
+/* iOS Safari: fixed attachment is broken — JS handles parallax via translate3d on .sb-hero-parallax-bg */
 @supports (-webkit-touch-callout: none) {
-  .sb-hero {
-    background-attachment: scroll;
+  @media (max-width: 768px) {
+    .sb-hero {
+      background-image: none;
+      background-color: #0d0d1a;
+    }
   }
 }
 

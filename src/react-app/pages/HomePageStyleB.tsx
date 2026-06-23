@@ -8,24 +8,23 @@ export const HomePageStyleB = () => {
   const [contactSubmitted, setContactSubmitted] = useState(false);
   const [contactLoading, setContactLoading] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
+  const heroBgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
       (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
     if (!isIOS) return;
 
-    const hero = heroRef.current;
-    if (!hero) return;
-
-    hero.style.backgroundAttachment = 'scroll';
+    const bg = heroBgRef.current;
+    if (!bg) return;
 
     let ticking = false;
     const update = () => {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
-        const top = hero.getBoundingClientRect().top;
-        hero.style.backgroundPosition = `50% ${-top}px`;
+        const top = bg.parentElement!.getBoundingClientRect().top;
+        bg.style.transform = `translate3d(0, ${top * 0.35}px, 0)`;
         ticking = false;
       });
     };
@@ -181,6 +180,7 @@ export const HomePageStyleB = () => {
 
       {/* HERO */}
       <section className="sb-hero" ref={heroRef}>
+        <div className="sb-hero-parallax-bg" ref={heroBgRef}></div>
         <div className="sb-hero-inner">
           <div className="sb-hero-content">
             <div className="sb-hero-pills">
