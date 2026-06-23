@@ -212,7 +212,7 @@ async function sendEmail(apiKey: string, { subject, html }: { subject: string; h
     },
     body: JSON.stringify({
       from: "Moize Dumpsters <noreply@moizedumpsters.com>",
-      to: ["Connor@moizedumpster.com"],
+      to: ["Connor@moizedumpsters.com"],
       subject,
       html,
     }),
