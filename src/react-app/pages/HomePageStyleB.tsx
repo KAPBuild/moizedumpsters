@@ -305,11 +305,11 @@ export const HomePageStyleB = () => {
           <div className="sb-sizes-grid">
             {sizes.map((d) => (
               <div key={d.size} className="sb-size-card">
-                <div className="sb-size-tag-wrap">
-                  <span className="sb-size-tag" style={{ backgroundColor: d.color }}>{d.tag}</span>
-                </div>
                 <div className="sb-size-img-wrap">
                   <img src={d.img} alt={d.size} className="sb-size-img" />
+                  <div className="sb-size-tag-wrap">
+                    <span className="sb-size-tag" style={{ backgroundColor: d.color }}>{d.tag}</span>
+                  </div>
                 </div>
                 <div className="sb-size-info">
                   <h3 className="sb-size-title">{d.size} Dumpster</h3>
