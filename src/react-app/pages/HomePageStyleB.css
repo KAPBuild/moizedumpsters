@@ -1027,52 +1027,41 @@ a.sb-contact-detail-item:hover {
   .sb-contact-form-wrap { padding: 32px; }
 }
 
+.sb-hero-mobile-truck {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .sb-hero {
-    background-color: #0d0d1a;
-    background-image: linear-gradient(rgba(0,0,0,0.38), rgba(0,0,0,0.45)), url('/images/truck-tall.png');
-    background-size: 100% 100%, contain;
-    background-position: center center, center center;
-    background-repeat: no-repeat, no-repeat;
-    background-attachment: scroll;
-    min-height: 100svh;
-    padding: 80px 0 60px;
+    background: linear-gradient(135deg, #faf5ff 0%, #f0f0ff 40%, #e8f4fd 100%);
+    min-height: unset;
+    padding: 32px 0 0;
+  }
+
+  .sb-hero-inner {
+    grid-template-columns: 1fr;
+    padding: 0 24px;
+    gap: 28px;
   }
 
   .sb-hero-image {
     display: none;
   }
 
-  .sb-hero-inner {
-    grid-template-columns: 1fr;
-    padding: 0 24px;
+  .sb-hero-mobile-truck {
+    display: block;
+    width: calc(100% + 48px);
+    margin: 0 -24px;
+  }
+
+  .sb-hero-mobile-truck img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .sb-hero-title {
-    color: #ffffff;
-    font-size: 36px;
-  }
-
-  .sb-hero-highlight {
-    color: #c4b5fd;
-  }
-
-  .sb-hero-sub {
-    color: rgba(255, 255, 255, 0.85);
-  }
-
-  .sb-pill {
-    background-color: rgba(255, 255, 255, 0.18);
-    color: #ffffff;
-    backdrop-filter: blur(6px);
-  }
-
-  .sb-btn-text {
-    color: #ffffff;
-  }
-
-  .sb-btn-text:hover {
-    color: #c4b5fd;
+    font-size: 34px;
   }
 }
 
