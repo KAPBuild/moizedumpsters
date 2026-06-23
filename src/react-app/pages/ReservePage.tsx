@@ -165,8 +165,9 @@ export const ReservePage = () => {
                       <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: 36, fontWeight: 900, color: isSelected ? 'white' : '#3d1a8a', lineHeight: 1 }}>
                         {s.yards}<span style={{ fontSize: 16, fontWeight: 600 }}>yd</span>
                       </div>
-                      <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: 22, fontWeight: 800, color: isSelected ? '#a3e895' : '#39c318' }}>
-                        ${s.price}
+                      <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, fontWeight: 700, color: isSelected ? '#a3e895' : '#39c318', lineHeight: 1.2 }}>
+                        Starting at<br />
+                        <span style={{ fontSize: 22 }}>${s.price}</span>
                       </div>
                     </div>
 
@@ -308,8 +309,9 @@ export const ReservePage = () => {
                       Delivery, pickup & disposal included · No hidden fees
                     </div>
                   </div>
-                  <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: 28, fontWeight: 900, color: '#3d1a8a' }}>
-                    ${selected.price}
+                  <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, fontWeight: 600, color: '#3d1a8a', textAlign: 'right', lineHeight: 1.3 }}>
+                    Starting at<br />
+                    <span style={{ fontSize: 28, fontWeight: 900 }}>${selected.price}</span>
                   </div>
                 </div>
 
@@ -339,7 +341,7 @@ export const ReservePage = () => {
                     marginTop: 8,
                   }}
                 >
-                  {loading ? 'Setting up payment...' : `Continue to Payment — $${selected.price}`}
+                  {loading ? 'Setting up payment...' : `Continue to Payment — Starting at $${selected.price}`}
                 </button>
                 <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, color: '#6b7280', textAlign: 'center', marginTop: 4 }}>
                   Secured by Stripe · We never store your card info
@@ -366,8 +368,9 @@ export const ReservePage = () => {
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-                <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: 26, fontWeight: 900, color: '#3d1a8a' }}>
-                  ${selected.price}
+                <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, fontWeight: 600, color: '#3d1a8a', textAlign: 'right', lineHeight: 1.3 }}>
+                  Starting at<br />
+                  <span style={{ fontSize: 26, fontWeight: 900 }}>${selected.price}</span>
                 </span>
                 <button
                   onClick={() => setStep('form')}
