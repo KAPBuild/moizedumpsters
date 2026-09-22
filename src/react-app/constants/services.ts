@@ -26,7 +26,7 @@ export const DUMPSTER_SIZES: DumpsterSize[] = [
   {
     size: '15 Yard',
     yards: 15,
-    dimensions: '18\' L × 8\' W × 3.5\' H',
+    dimensions: '14\' L × 8\' W × 4\' H',
     capacity: 'Great for medium residential projects',
     idealFor: [
       'Roof replacements',
@@ -40,7 +40,7 @@ export const DUMPSTER_SIZES: DumpsterSize[] = [
   {
     size: '20 Yard',
     yards: 20,
-    dimensions: '22\' L × 8\' W × 4\' H',
+    dimensions: '14\' L × 8\' W × 6\' H',
     capacity: 'Most popular size for home renovation projects',
     idealFor: [
       'Kitchen or bathroom remodels',
@@ -68,7 +68,7 @@ export const DUMPSTER_SIZES: DumpsterSize[] = [
   {
     size: '30 Yard',
     yards: 30,
-    dimensions: '22\' L × 8\' W × 6\' H',
+    dimensions: '22\' L × 7\' W × 5\'6" H',
     capacity: 'Ideal for large-scale residential and commercial projects',
     idealFor: [
       'Major home additions',

@@ -76,9 +76,9 @@ app.post("/api/contact", async (c) => {
 // ── STRIPE CHECKOUT ──────────────────────────────────────────────────────────
 
 const DUMPSTER_SIZES: Record<string, { amount: number; name: string }> = {
-  '15': { amount: 29900, name: '15 Yard Dumpster Rental (7 Days)' },
-  '20': { amount: 39900, name: '20 Yard Dumpster Rental (7 Days)' },
-  '30': { amount: 49900, name: '30 Yard Dumpster Rental (7 Days)' },
+  '15': { amount: 57500, name: '15 Yard Dumpster Rental (7 Days, 2 Tons Included)' },
+  '20': { amount: 75000, name: '20 Yard Dumpster Rental (7 Days, 2.5 Tons Included)' },
+  '30': { amount: 90000, name: '30 Yard Dumpster Rental (7 Days, 3 Tons Included)' },
 };
 
 app.post("/api/create-checkout-session", async (c) => {

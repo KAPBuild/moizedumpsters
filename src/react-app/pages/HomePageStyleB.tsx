@@ -109,7 +109,7 @@ export const HomePageStyleB = () => {
   const sizes = [
     {
       size: '15 YD',
-      dims: "6' × 8' × 16'",
+      dims: "14'L × 8'W × 4'H",
       img: '/images/dumpsters/15yd-side.jpg',
       tag: 'Standard',
       color: '#ddd6fe',
@@ -118,7 +118,7 @@ export const HomePageStyleB = () => {
     },
     {
       size: '20 YD',
-      dims: "6' × 8' × 22'",
+      dims: "14'L × 8'W × 6'H",
       img: '/images/dumpsters/20yd-side.jpg',
       tag: 'Most Popular',
       color: '#c4b5fd',
@@ -127,7 +127,7 @@ export const HomePageStyleB = () => {
     },
     {
       size: '30 YD',
-      dims: "6' × 8' × 22'",
+      dims: `22'L × 7'W × 5'6"H`,
       img: '/images/dumpsters/30yd-side.jpg',
       tag: 'Large',
       color: '#a78bfa',

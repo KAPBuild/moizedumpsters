@@ -5,24 +5,27 @@ import { EmbeddedCheckout, EmbeddedCheckoutProvider } from '@stripe/react-stripe
 const SIZES = [
   {
     yards: '15',
-    price: 299,
+    price: 575,
+    tons: '2 tons included',
     tag: 'Standard',
     best: 'Garage cleanout, single-room reno, junk removal',
-    dims: '14 ft × 7.5 ft × 4.5 ft tall',
+    dims: '14 ft long × 8 ft wide × 4 ft tall',
   },
   {
     yards: '20',
-    price: 399,
+    price: 750,
+    tons: '2.5 tons included',
     tag: 'Most Popular',
     best: 'Kitchen/bath remodel, roofing tear-off, deck removal',
-    dims: '22 ft × 7.5 ft × 4.5 ft tall',
+    dims: '14 ft long × 8 ft wide × 6 ft tall',
   },
   {
     yards: '30',
-    price: 499,
+    price: 900,
+    tons: '3 tons included',
     tag: 'Large',
     best: 'Full renovation, large construction, demolition',
-    dims: '22 ft × 7.5 ft × 6 ft tall',
+    dims: '22 ft long × 7 ft wide × 5 ft 6 in tall',
   },
 ];
 
