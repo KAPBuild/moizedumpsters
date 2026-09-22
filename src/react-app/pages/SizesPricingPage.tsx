@@ -77,9 +77,29 @@ export const SizesPricingPage = () => {
           </div>
 
           <div style={{ textAlign: 'center', marginBottom: 64 }}>
-            <h2 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 28, fontWeight: 800, color: '#1f2937', marginBottom: 8 }}>Straightforward Pricing. No Hidden Fees.</h2>
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, color: '#4b5563', marginBottom: 24 }}>Locally family owned & run · Serving within a 15-mile radius of Troy, NY</p>
-            <img src="/images/ad-pricing.jpg" alt="Moize Dumpsters pricing — 15yd $575, 20yd $750, 30yd $900" style={{ maxWidth: '100%', width: 480, height: 'auto', borderRadius: 12, boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }} />
+            <h2 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 32, fontWeight: 800, color: '#1f2937', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '1px' }}>Compare Sizes</h2>
+            <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, color: '#4b5563', marginBottom: 24 }}>Straightforward pricing · No hidden fees · Serving within a 15-mile radius of Troy, NY</p>
+            <div style={{
+              width: 480,
+              maxWidth: '100%',
+              aspectRatio: '553 / 800',
+              overflow: 'hidden',
+              borderRadius: 12,
+              boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+              margin: '0 auto',
+            }}>
+              <img
+                src="/images/ad-pricing.jpg"
+                alt="Moize Dumpsters pricing — 15yd $575, 20yd $750, 30yd $900"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center bottom',
+                  display: 'block',
+                }}
+              />
+            </div>
           </div>
 
           <div style={{ background: '#3d1a8a', borderRadius: 16, padding: '60px 40px', textAlign: 'center', borderTop: '4px solid #39c318' }}>
